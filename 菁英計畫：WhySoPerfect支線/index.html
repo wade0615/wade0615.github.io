@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>菁英計畫：WhySoPerfect支線 | W.S.Wade</title><meta name="description" content="菁英計畫：WhySoPerfect支線"><meta name="author" content="Wade Wu"><meta name="copyright" content="Wade Wu"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><meta name="twitter:card" content="summary"><meta name="twitter:title" content="菁英計畫：WhySoPerfect支線"><meta name="twitter:description" content="菁英計畫：WhySoPerfect支線"><meta name="twitter:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta property="og:type" content="article"><meta property="og:title" content="菁英計畫：WhySoPerfect支線"><meta property="og:url" content="https://wade0615.github.io/%E8%8F%81%E8%8B%B1%E8%A8%88%E7%95%AB%EF%BC%9AWhySoPerfect%E6%94%AF%E7%B7%9A/"><meta property="og:site_name" content="W.S.Wade"><meta property="og:description" content="菁英計畫：WhySoPerfect支線"><meta property="og:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="canonical" href="https://wade0615.github.io/%E8%8F%81%E8%8B%B1%E8%A8%88%E7%95%AB%EF%BC%9AWhySoPerfect%E6%94%AF%E7%B7%9A/"><link rel="prev" title="菁英計畫：奧德賽ChallengeCamp" href="https://wade0615.github.io/%E8%8F%81%E8%8B%B1%E8%A8%88%E7%95%AB%EF%BC%9A%E5%A5%A7%E5%BE%B7%E8%B3%BDChallengeCamp/"><link rel="next" title="菁英計畫：GDG支線" href="https://wade0615.github.io/%E8%8F%81%E8%8B%B1%E8%A8%88%E7%95%AB%EF%BC%9AGDG%E6%94%AF%E7%B7%9A/"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-168202389-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">W.S.Wade</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">33</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">6</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><main id="content-outer"><div id="top-container" style="background-image: url(/img/typewriter.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">菁英計畫：WhySoPerfect支線</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-11-22</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%8F%81%E8%8B%B1%E8%A8%88%E7%95%AB/">菁英計畫</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-comments-o post-meta__icon fa-fw" aria-hidden="true"></i><span>評論數:</span><a href="/%E8%8F%81%E8%8B%B1%E8%A8%88%E7%95%AB%EF%BC%9AWhySoPerfect%E6%94%AF%E7%B7%9A/#post-comment"><span class="gitalk-comment-count comment-count"></span></a></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><p>2019十月底，12 &amp; 13屆 WEB 的成員們在 Chris 的召集之下，簡短地開了一次會，內容只簡短地提及到會有一個只在我們 camp 中進行的挑戰賽，技術程度絕對遠超我們所學，過程中會有一位模擬的業主，也就是 WEB 前學員 — Askie，而與業主要如何溝通，會是我們的主要任務。</p>
+<h2 id="一臉懵逼的我們，靜候著挑戰的到來。">一臉懵逼的我們，靜候著挑戰的到來。</h2>
+<p>十一月一號，眾人在大會議室中，在 Chris 的指示下在一張小紙中寫下&quot;最想與誰分到一組&quot;的名字，一如眾人猜想的，寫下的名字就是不會被排在一起的隊員。最後「鵬化、Titan、xxxtim」「Letter、JinWen、Sosa」被分到一組，而「Ruru、雅楨、我」則成為了一個團隊。</p>
+<p>我們三人，對自己的高要求，常常會埋首於細枝末節的問題而忽略了大方向的考量，<em><strong>「為何要如此的執著完美呢？」</strong></em>，不要鑽牛角尖，是我們這組的課題，看來…“W”ade “Y”achen “R”uru 隊名已經出現了</p>
+<blockquote>
+<p>隊名：『 Why So Perfect 』，定案！</p>
+</blockquote>
+<p>緊接而來的週末，因為我轉職成假日 Barista 了而無法積極參與，Yachen 與 Ruru 已先行切版與開好專案 Git 分支，週六晚當我有空終於打開電腦之時，當天只來得及趕快跟上進度，查看共筆 HackMD 與瀏覽已經爆炸的 Slack 訊息跟技術資訊，最後只好靜待週一的到來。</p>
+<p>週一開始正式開工之後，我在潛移默化之中走上了團隊的規劃與安排的位置，接下了用 Trello 紀錄與追蹤進度的工作，並在簡單的切出少量版面之後，開始構想最後我們整體想要呈現出來的畫面，串接起各畫面並思考整合各版面的重要性，對使用者來說該有怎樣的操作體驗，「電子書」的最低需求是什麼，若我們三個任務無法在時間內做完，我們該怎麼取捨…一系列的問題不斷的在我腦中旋轉著。</p>
+<p>在 Chris 的兩次戰術指導之下，我知道了我正在做的事情叫做「MVP最小可行性」，並在兩位隊友的同意之下，大改了我們 Trello 的任務追蹤模式，更清晰更簡潔的任務追蹤與進程安排，知道了與業主溝通過程中的一些小技巧，同時與夥伴們開始構想我們的 Demo 劇本，如何 “好好說一個故事” 。</p>
+<blockquote>
+<p>「你家斷線的混分組員已上線！」</p>
+</blockquote>
+<p>很有趣的一點是，到了接近尾聲之時，一問之下才發現我們這組有一個特點，每個人都覺得自己做的事情是最不重要的那個，另外兩個組員做的事情更重要更困難，感到大夥對自己的輕視與不自信，然而事實是… Yachen 的大量切版與 Jquery 等功能功不可沒，Ruru 的 JS 紀錄功能與文本的導入也不可或缺，而我充分做到了頁面間的串接整合與進度追蹤，並在 Demo 時的故事引導與作品呈現獲得了在場眾人的讚賞與肯定，<em><strong>“WhySoPerfect”</strong></em> 少了我們任何一個都不完整，最後也就不會是現在的我們，沒有一個人是不重要的。</p>
+<blockquote>
+<p>『兩個 PM，一個 RD』「欸一！什麼啦～XD」</p>
+</blockquote>
+<h2 id="「為何要如此的執著完美？」的我們，最後做出了最完美的呈現。">「為何要如此的執著完美？」的我們，最後做出了最完美的呈現。</h2>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/%E8%8F%81%E8%8B%B1%E8%A8%88%E7%95%AB%EF%BC%9A%E5%A5%A7%E5%BE%B7%E8%B3%BDChallengeCamp/"><img class="prev_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>菁英計畫：奧德賽ChallengeCamp</span></div></a></div><div class="next-post pull_right"><a href="/%E8%8F%81%E8%8B%B1%E8%A8%88%E7%95%AB%EF%BC%9AGDG%E6%94%AF%E7%B7%9A/"><img class="next_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>菁英計畫：GDG支線</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 評論</span></div><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: '1382d280468d9a8aee3e',
+  clientSecret: '4985ac7cec047e804ae2a199e92dee1840ac495e',
+  repo: 'https://github.com/wade0615/MyBlog',
+  owner: 'https://github.com/wade0615',
+  admin: '',
+  id: md5(decodeURI(location.pathname)),
+  language: '',
+  updateCountCallback: commentCount
+})
+gitalk.render('gitalk-container')
+
+function commentCount(n){
+  document.getElementsByClassName('gitalk-comment-count')[0].innerHTML= n
+}</script></div></div></main><footer id="footer" style="background-image: url(/img/typewriter.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By Wade Wu</div><div class="framework-info"><span>Power by </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-plus" id="font_plus" title="放大字體"></i><i class="fa fa-minus" id="font_minus" title="縮小字體"></i><i class="darkmode fa fa-moon-o" id="darkmode" title="夜間模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="設置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直達評論"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到頂部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>

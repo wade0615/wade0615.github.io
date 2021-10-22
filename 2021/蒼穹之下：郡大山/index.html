@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>蒼穹之下：郡大山 | W.S.Wade</title><meta name="description" content="蒼穹之下：郡大山"><meta name="author" content="Wade Wu"><meta name="copyright" content="Wade Wu"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><meta name="twitter:card" content="summary"><meta name="twitter:title" content="蒼穹之下：郡大山"><meta name="twitter:description" content="蒼穹之下：郡大山"><meta name="twitter:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta property="og:type" content="article"><meta property="og:title" content="蒼穹之下：郡大山"><meta property="og:url" content="https://wade0615.github.io/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/"><meta property="og:site_name" content="W.S.Wade"><meta property="og:description" content="蒼穹之下：郡大山"><meta property="og:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="canonical" href="https://wade0615.github.io/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/"><link rel="prev" title="想知道嗎：可選串連 跟 雙問號語法" href="https://wade0615.github.io/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E5%8F%AF%E9%81%B8%E4%B8%B2%E9%80%A3%E8%B7%9F%E9%9B%99%E5%95%8F%E8%99%9F%E8%AA%9E%E6%B3%95/"><link rel="next" title="盛夏繁星：致愛我的人與我愛的人" href="https://wade0615.github.io/2021/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A%E8%87%B4%E6%84%9B%E6%88%91%E7%9A%84%E4%BA%BA%E8%88%87%E6%88%91%E6%84%9B%E7%9A%84%E4%BA%BA/"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-168202389-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">W.S.Wade</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">34</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">6</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><main id="content-outer"><div id="top-container" style="background-image: url(/img/typewriter.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">蒼穹之下：郡大山</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2021-03-20</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B/">蒼穹之下</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-comment-o post-meta__icon fa-fw" aria-hidden="true"></i><span>評論數:</span><a href="/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/#post-comment"><span class="disqus-comment-count" data-disqus-url="https://wade0615.github.io/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/"></span></a></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h4 id="「謝啦！Steven！」">「謝啦！Steven！」</h4>
+<p>一早就把我室友挖起來請他載我去北車，我要在七點半的時候抵達高鐵台中站，驅車前往南投的郡大山，在山上度過 3/13-14 兩天一夜的生活，這是我有記憶以來的第一座百岳，也是我第一次的野營過夜經驗，對於一個給我完整廚房我都難以做出三菜一湯，連煮白飯都不會的廚房絕緣體，我對於在野外生出熱騰騰的美食這件事，實在是毫無信心可言。</p>
+<h4 id="「幹勒我忘記帶相機！」">「幹勒我忘記帶相機！」</h4>
+<p>看著相機的備用電池，想起放在房間門口的 a77 ，站在高鐵月台上的我頓時懊惱了起來，我期待我的第一次百岳高山是可以用相機鏡頭記錄下我的視角的，最後卻還是沒有帶到，看著依靠在腳邊的 45L 登山背包…好吧…或許這也是一種禮物吧！反正我的包包也塞不下了，或許是生命在告訴我好好享受這趟第一次的每個當下吧！</p>
+<p><img alt="怎麼收一收這麼多東西都快塞不下了" width="50%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5893.jpg" class="lazyload"><img alt="哭啊我的相機還在房間門口" width="50%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5894.jpg" class="lazyload"></p>
+<h4 id="『嗨！我叫理查，然後他是-Eddie，我們是這兩天的領隊。』">『嗨！我叫理查，然後他是 Eddie，我們是這兩天的領隊。』</h4>
+<p>到了四號會面點，看著散亂又群聚的人群，我隨便抓了一個人問了是不是要去郡大山的，『我是要去奇萊南華的唷！你要一起來嗎？』「我本來要去郡大山啦～啊我現在跟著上車換去奇萊南華可以嗎？」，一片笑聲中，我最終還是找到了我的團隊，踏上了顛頗的上山之路，一趟號稱坐車比爬山還累的車程。</p>
+<h4 id="『垂直旋轉快轉緊的時候，他會漏一點氣，不用緊張快速轉緊就好。』">『垂直旋轉快轉緊的時候，他會漏一點氣，不用緊張快速轉緊就好。』</h4>
+<p>經過三個多小時的碰碰車體驗，我們在位於 32k 登山口再上去一點的地方扎營，稍作休息並睡個午覺之後，理查與 Eddie 共同教我們在高山中的一些烹飪基礎工具知識與技巧，怎麼用高山瓦斯，怎麼點火，在山上煮米的比例要抓到 1:1.8 以上比較好，身為在都市連用電鍋都不會煮飯的人，第一次煮飯就是在山上居然還成功了，害我好想回到台北之後也試試看自己用電鍋煮飯了！『我猜你是姓吳的！』「唉唷！好像很會猜餒」，晚上大家帶著頭燈，互相介紹後玩著大聲小聲，喝著 生蠔 帶來的媽祖高粱，在逼近零度的氣溫裡，看著星空裡的天蠍座，暢笑入睡。</p>
+<p><img alt="四人合照一下啊" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5884.jpg" class="lazyload"><img alt="薑茶讚啦" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5887.jpg" class="lazyload"><img alt="居然成功了" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5897.jpg" class="lazyload"></p>
+<p><img alt="敢不敢聞一下" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5895.jpg" class="lazyload"><img alt="帳篷本體" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5896.jpg" class="lazyload"><img alt="天亮了還敢睡啊" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5898.jpg" class="lazyload"></p>
+<h4 id="『欸啊小夏勒？』">『欸啊小夏勒？』</h4>
+<p>一早四點在一片昏暗中起床，半夜一直感覺到 智文 輕微的碰到我的右肩，我只好一直往左邊退，直到已經退到三人帳的邊緣了，好險 智文 沒有再次逼車，不然我差點就要睡到帳篷外了，晨霧之中收完帳，喝完熱可可，背上輕裝，十四個人一起從 32k 的登山口出發，一開始的陡上讓沒有心理準備的大家喘的要死，才剛走不到 200 公尺，我與智文、 Kiki 在半路中脫下保暖層的衣物，一轉頭…疑？怎麼少一個人，小夏只剩遠遠的一個白點在後面喘著氣，而 Eddie 在他身邊陪著她。</p>
+<h4 id="『旗子給你，追上前面的理查，告訴他後面的情況』">『旗子給你，追上前面的理查，告訴他後面的情況』</h4>
+<p>Eddie 把旗子交給我之後，就回頭陪伴小夏了，開啟事先載好的離線地圖，我帶著體力過剩越來越嗨的 智文 與 發誓再也不來爬百岳的 Kiki 開始了趕路之旅，最後終於在 望鄉山 遇到了等待我們許久，已經查完 3217 倒底是什麼的 理查。過多的喘氣與需要休息的頻率提醒著我，3000公尺高山中的氧氣比平地稀薄許多，我嘗試找到那個適合的呼吸節奏與爬山腳程，卻還是只能每走一段就喘一下，然而在穿越一段又一段比身體還高的箭竹林，爬過少許的攀繩路段之後，我們終於還是在寒風中，順利地站上了稜線，準備前往郡大北峰。</p>
+<p><img alt="比人還高的我也不知道是什麼的草" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5891.jpg" class="lazyload"><img alt="剪影是智文" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5889.jpg" class="lazyload"><img alt="放閃的生蠔情侶（物理" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5892.jpg" class="lazyload"><br>
+<img alt="一望無際的高山草原" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5890.jpg" class="lazyload"><img alt="山！都是山！" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5888.jpg" class="lazyload"><img alt="聽說是玉山" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5899.jpg" class="lazyload"></p>
+<h4 id="「嘿！我抓著你，你可以再往外站一點。」">「嘿！我抓著你，你可以再往外站一點。」</h4>
+<p>稜線上的風不像我想像中的刺骨，輕輕柔柔的吹過因運動而炙熱的身軀，威望帽穩穩地戴在頭上，我坐在突出去的岩石上，讓 理查 幫我拍著照片，一路上鬼吼鬼叫的 智文 此時卻躲超後面，完全不敢站去石頭上拍照，還是我陪他一起一點一點地挪動屁股，他才免強坐到一個可以拍照的地方。高山草原的風景在晨光的斜照下帶有些微的金黃，我想起了 野人七號部落 拍的奇萊南華，也想起了 風之谷 中站在金黃觸鬚上的娜烏西卡，啊！要是我有帶相機上來就好了啊！而且也好希望有人可以幫我拍幾張帥帥的照片啊！</p>
+<h4 id="『山就在那邊不會走，準備好了，再來就好。』">『山就在那邊不會走，準備好了，再來就好。』</h4>
+<p>在 郡大山主峰 三角點與玉山合照了幾張，吃個幾片火腿之後，我們迅速照著原路折返，原本還小有期待會不會遇到苦苦追趕的 小夏，後來聽 理查 所說才知道原來她基於時間與體力等考量，只到北峰便折返，相信有兩位領隊保護並告誡著她，那我就不再碎念，這次就負責嘴她的部分好了，早就說要好好做功課了吧～還敢不練體能啊？</p>
+<p><img alt="小夏眼中的Eddie" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5900.jpg" class="lazyload"><img alt="登頂了啦" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5883.jpg" class="lazyload"><img alt="368!368!" width="33%" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5885.jpg" class="lazyload"></p>
+<h4 id="『用興趣養興趣』">『用興趣養興趣』</h4>
+<p>原本要現場買自由座回台北的我，幸運的搭了 理查 要開回台北的九人座，在車上閒聊著，這傢伙明明還是菸酒生，卻又兼職攝影師、兼職登山領隊、接駁開車…，簡直像瘋了一樣，每個都是興趣也每個都小有收入可以各自供給需要的支出，他的故事我聽的著迷，一邊默默在心中回憶起這三年來的不同，一邊期許自己的故事終有一日，也有與眾不同又令人羨慕的一天，也或許其實…我已經在這個當下裡。</p>
+<p><img alt="那是飛碟嗎！可以養嗎？" data-src="/images/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/5886.jpg" class="lazyload"></p>
+<h4 id="登上人生第一座百岳的我，忘卻了山下的模式與喧囂，只剩掌中的木與土-br-站起身，拍掉身上的塵-br-我將再次奔赴群山">登上人生第一座百岳的我，忘卻了山下的模式與喧囂，只剩掌中的木與土<br>站起身，拍掉身上的塵<br>我將再次奔赴群山</h4>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E5%8F%AF%E9%81%B8%E4%B8%B2%E9%80%A3%E8%B7%9F%E9%9B%99%E5%95%8F%E8%99%9F%E8%AA%9E%E6%B3%95/"><img class="prev_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>想知道嗎：可選串連 跟 雙問號語法</span></div></a></div><div class="next-post pull_right"><a href="/2021/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A%E8%87%B4%E6%84%9B%E6%88%91%E7%9A%84%E4%BA%BA%E8%88%87%E6%88%91%E6%84%9B%E7%9A%84%E4%BA%BA/"><img class="next_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>盛夏繁星：致愛我的人與我愛的人</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 評論</span></div><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://wade0615.github.io/2021/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%83%A1%E5%A4%A7%E5%B1%B1/';
+  this.page.identifier = '2021/蒼穹之下：郡大山/';
+  this.page.title = '蒼穹之下：郡大山';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'wade0615blog' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script></div></div></main><footer id="footer" style="background-image: url(/img/typewriter.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By Wade Wu</div><div class="framework-info"><span>Power by </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-plus" id="font_plus" title="放大字體"></i><i class="fa fa-minus" id="font_minus" title="縮小字體"></i><i class="darkmode fa fa-moon-o" id="darkmode" title="夜間模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="設置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直達評論"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到頂部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>

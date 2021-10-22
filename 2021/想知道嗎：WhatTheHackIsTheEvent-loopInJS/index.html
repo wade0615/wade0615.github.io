@@ -1,0 +1,157 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>想知道嗎：What the hack is the Event-loop in JS? | W.S.Wade</title><meta name="description" content="想知道嗎：What the hack is the Event-loop in JS?"><meta name="author" content="Wade Wu"><meta name="copyright" content="Wade Wu"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><meta name="twitter:card" content="summary"><meta name="twitter:title" content="想知道嗎：What the hack is the Event-loop in JS?"><meta name="twitter:description" content="想知道嗎：What the hack is the Event-loop in JS?"><meta name="twitter:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta property="og:type" content="article"><meta property="og:title" content="想知道嗎：What the hack is the Event-loop in JS?"><meta property="og:url" content="https://wade0615.github.io/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AWhatTheHackIsTheEvent-loopInJS/"><meta property="og:site_name" content="W.S.Wade"><meta property="og:description" content="想知道嗎：What the hack is the Event-loop in JS?"><meta property="og:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="canonical" href="https://wade0615.github.io/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AWhatTheHackIsTheEvent-loopInJS/"><link rel="prev" title="盛夏繁星：心智、純粹的愛、愛的交換" href="https://wade0615.github.io/2021/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A%E5%BF%83%E6%99%BA%E3%80%81%E7%B4%94%E7%B2%B9%E7%9A%84%E6%84%9B%E3%80%81%E6%84%9B%E7%9A%84%E4%BA%A4%E6%8F%9B/"><link rel="next" title="想知道嗎：可選串連 跟 雙問號語法" href="https://wade0615.github.io/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E5%8F%AF%E9%81%B8%E4%B8%B2%E9%80%A3%E8%B7%9F%E9%9B%99%E5%95%8F%E8%99%9F%E8%AA%9E%E6%B3%95/"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-168202389-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">W.S.Wade</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">34</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">6</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><main id="content-outer"><div id="top-container" style="background-image: url(/img/typewriter.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">想知道嗎：What the hack is the Event-loop in JS?</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2021-06-27</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E/">想知道嗎</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-comment-o post-meta__icon fa-fw" aria-hidden="true"></i><span>評論數:</span><a href="/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AWhatTheHackIsTheEvent-loopInJS/#post-comment"><span class="disqus-comment-count" data-disqus-url="https://wade0615.github.io/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AWhatTheHackIsTheEvent-loopInJS/"></span></a></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><p><img alt="與本文無關但我就是想放的，綾波零ByQosicart" width="100%" data-src="/images/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AWhatTheHackIsTheEvent-loopInJS/Eva0.jpeg" class="lazyload"></p>
+<h4 id="本篇文主要整理-Philip-Roberts-在-JS-Conf-的演講影片-What-the-heck-is-the-event-loop-anyway">本篇文主要整理 Philip Roberts 在 JS Conf 的演講影片 <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ&amp;t=526s&amp;ab_channel=JSConf" target="_blank" rel="noopener">What the heck is the event loop anyway?</a></h4>
+<p>好的，轉職成前端工程師後這段時間，我聽過一些像是『JS單執行緒』『Call back』『Event loop』『V8 引擎』『Runtime』等等的名詞，但我從來沒有真正了解其中的關聯與意義，所以…JavaScript，這些名詞對你來說倒底是什麼意思？</p>
+<p><img alt="JS" width="100%" data-src="/images/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AJSforEach%E7%9A%84index%E4%BD%8D%E7%BD%AE/JS.jpeg" class="lazyload"></p>
+<h2 id="單執行緒（one-thread）＆堆疊（Stack）">單執行緒（one thread）＆堆疊（Stack）</h2>
+<p>one thread == one call back == one thing at the time，意思就是 JS 一次就只會做一件事。</p>
+<p>而 Stack 則是會記錄我們目前程式執行到哪裡，將目前執行的程式添加到『堆疊（Stack）』的最上方，直到執行完之後再將他從『堆疊（Stack）』的最上方移除，並遵循「後進先出」的原則執行堆疊中的下一段函式，一次只做一件事。</p>
+<p>像是 <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ&amp;t=270s&amp;ab_channel=JSConf" target="_blank" rel="noopener">這樣</a></p>
+<p><img alt="stack" width="100%" data-src="/images/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AWhatTheHackIsTheEvent-loopInJS/stack.png" class="lazyload"></p>
+<p>那如果你的程式出現了無限迴圈，函式就會不斷地被添加到 Stack 上面，最後被瀏覽器阻止…</p>
+<p>像是 <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ&amp;t=405s&amp;ab_channel=JSConf" target="_blank" rel="noopener">這樣</a></p>
+<p><img alt="toManyStack" width="100%" data-src="/images/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AWhatTheHackIsTheEvent-loopInJS/forEachStack.png" class="lazyload"></p>
+<hr>
+<h2 id="阻塞（blocking）">阻塞（blocking）</h2>
+<p>Blocking 其實沒有一種明確的定義，如果有一段程式碼跑得太久了，卡在 Stack 上面一直結束不了，造成網頁不管怎麼點都沒有作用沒有反應，就被稱作 Blocking。</p>
+<p>像是 <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ&amp;t=472s&amp;ab_channel=JSConf" target="_blank" rel="noopener">這樣</a></p>
+<p><img alt="blocking" width="100%" data-src="/images/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AWhatTheHackIsTheEvent-loopInJS/blocking.png" class="lazyload"></p>
+<hr>
+<h2 id="Wait…What">Wait…What???</h2>
+<p>那該怎麼辦？我們總有一些函式是需要等待之後才能有結果的，總不可能就讓畫面停在那邊等待吧？這時我們會很直覺地想到使用 非同步（Asynchronous Callback） 的方式去撰寫程式。</p>
+<p>試想一下下面這種情境：</p>
+<p><img alt="setTimeout" width="100%" data-src="/images/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AWhatTheHackIsTheEvent-loopInJS/setTimeout.png" class="lazyload"></p>
+<p>我們可以看到 JS 依序做了幾件事：</p>
+<ol>
+<li>印出 hi</li>
+<li>我們叫它等待五秒之後印出 there</li>
+<li>然後 JS 不知怎麼的一邊數著五秒但一邊的跳過了 “等待” 的動作</li>
+<li>印出 JSConfEU</li>
+<li>五秒到了，印出 there</li>
+</ol>
+<p>好像哪裡怪怪的…如果 JS 一次只能做一件事，那他是怎麼同時 “數著五秒” 又同時 “印出 JSConfEU” 的呢？依據剛剛的說法他不是會使網頁 Blocking 並 “數完五秒” 再做其他事嗎？</p>
+<p><img alt="what" width="50%" data-src="/images/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AWhatTheHackIsTheEvent-loopInJS/what.gif" class="lazyload"></p>
+<hr>
+<h2 id="Concurrency-and-Event-Loop">Concurrency and Event Loop</h2>
+<p>事實是，Javascript 的運行環境 (Runtime) 的確一次只能做一件事情，我們可以同時做很多事情，是因為瀏覽器不是只是一個運行環境 (Runtime) 而已，瀏覽器提供了我們很多不同的 <a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank" rel="noopener">WebAPIs</a> ，就像這次我們用的 <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout" target="_blank" rel="noopener">setTimeout()</a> ，這些不是 JS 引擎本身的功能也不在 V8 引擎中，我們只能呼叫這些功能去執行他，然後搭配 Event Loop 在需要這些函式的時候，加入我們的 Stack 中去執行它。</p>
+<p>就像 <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ&amp;t=726s&amp;ab_channel=JSConf" target="_blank" rel="noopener">這樣</a></p>
+<p><img alt="eventLoop" width="100%" data-src="/images/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AWhatTheHackIsTheEvent-loopInJS/eventLoop.png" class="lazyload"></p>
+<p>所以回想一下上面的 setTimeout() 情境，正確的執行順序應該是：</p>
+<ol>
+<li>印出 hi</li>
+<li>setTimeout() 的等待事件被 WebAPIs 取走執行等待五秒，而 Stack 繼續下一步</li>
+<li>印出 JSConfEU</li>
+<li>五秒到了，WebAPIs 把要做的事…也就是 console.log(‘there’) 放入 Event Queue 中</li>
+<li>當 Stack 中沒有其他任務了，Event Loop 開始做事，將 Queue 中的任務依序推去 Stack 中執行</li>
+<li>印出 there</li>
+</ol>
+<p>就像 <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ&amp;t=807s&amp;ab_channel=JSConf" target="_blank" rel="noopener">這樣</a></p>
+<p><img alt="queue" width="100%" data-src="/images/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AWhatTheHackIsTheEvent-loopInJS/queue.png" class="lazyload"></p>
+<hr>
+<h2 id="setTimeout-時間為-0-呢？">setTimeout() 時間為 0 呢？</h2>
+<p>由於上面 WebAPIs 與 Event Loop 的存在，我們知道只要你使用了像是 setTimeout() 這種 WebAPIs ，這項任務就會被移出 Stack 並交由 WebAPIs 去執行 runtime ，結束後放到 Queue 去等待 Stack 被清空。</p>
+<p>結果依然會是：</p>
+<ol>
+<li>印出 hi</li>
+<li>setTimeout() 的等待事件被 WebAPIs 取走執行等待 0 秒，被立刻放入了 Event Queue 中等 Stack 清空</li>
+<li>印出 JSConfEU</li>
+<li>當 Stack 中沒有其他任務了，Event Loop 開始做事，將 Queue 中的任務依序推去 Stack 中執行</li>
+<li>印出 there</li>
+</ol>
+<p>所以重點不是 “時間為0” ，而是我們用了 setTimeout() 這種 WebAPIs 。</p>
+<p>就像 <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ&amp;t=899s&amp;ab_channel=JSConf" target="_blank" rel="noopener">這樣</a></p>
+<hr>
+<p>本文主要擷取 <a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ&amp;ab_channel=JSConf" target="_blank" rel="noopener">所以說event loop到底是什麼玩意兒？| Philip Roberts | JSConf EU</a> 的部分內容作為筆記，並參考了網上許多前輩的整理文章與 MDN 內容加以閱讀理解，有 30 分鐘的非常建議看完 Philip Roberts 完整的影片，真的幫助了我許多。</p>
+<p>影片講者 Philip Roberts 也製作了一個視覺化的工具 <a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target="_blank" rel="noopener">Loupe</a> ，幫助理解整個事件過程，可以自己將想觀察的案例貼上去自己觀察。</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/EventLoop" target="_blank" rel="noopener">並行模型和事件循環</a></li>
+<li><a href="https://medium.com/itsems-frontend/javascript-event-loop-event-queue-call-stack-74a02fed5625" target="_blank" rel="noopener">[JavaScript] Javascript 的事件循環 (Event Loop)、事件佇列 (Event Queue)、事件堆疊 (Call Stack)：排隊</a></li>
+<li><a href="https://pjchender.blogspot.com/2017/08/javascript-learn-event-loop-stack-queue.html" target="_blank" rel="noopener">[筆記] 理解 JavaScript 中的事件循環、堆疊、佇列和併發模式（Learn event loop, stack, queue, and concurrency mode of JavaScript in depth）</a></li>
+</ul>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2021/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A%E5%BF%83%E6%99%BA%E3%80%81%E7%B4%94%E7%B2%B9%E7%9A%84%E6%84%9B%E3%80%81%E6%84%9B%E7%9A%84%E4%BA%A4%E6%8F%9B/"><img class="prev_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>盛夏繁星：心智、純粹的愛、愛的交換</span></div></a></div><div class="next-post pull_right"><a href="/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E5%8F%AF%E9%81%B8%E4%B8%B2%E9%80%A3%E8%B7%9F%E9%9B%99%E5%95%8F%E8%99%9F%E8%AA%9E%E6%B3%95/"><img class="next_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>想知道嗎：可選串連 跟 雙問號語法</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 評論</span></div><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://wade0615.github.io/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AWhatTheHackIsTheEvent-loopInJS/';
+  this.page.identifier = '2021/想知道嗎：WhatTheHackIsTheEvent-loopInJS/';
+  this.page.title = '想知道嗎：What the hack is the Event-loop in JS?';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'wade0615blog' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script></div></div></main><footer id="footer" style="background-image: url(/img/typewriter.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By Wade Wu</div><div class="framework-info"><span>Power by </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-plus" id="font_plus" title="放大字體"></i><i class="fa fa-minus" id="font_minus" title="縮小字體"></i><i class="darkmode fa fa-moon-o" id="darkmode" title="夜間模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="設置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直達評論"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到頂部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>

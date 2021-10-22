@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>【對Vue寫一個小測試吧】－npm &amp; Webpack | W.S.Wade</title><meta name="description" content="【對Vue寫一個小測試吧】－npm &amp; Webpack"><meta name="author" content="Wade Wu"><meta name="copyright" content="Wade Wu"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><meta name="twitter:card" content="summary"><meta name="twitter:title" content="【對Vue寫一個小測試吧】－npm &amp; Webpack"><meta name="twitter:description" content="【對Vue寫一個小測試吧】－npm &amp; Webpack"><meta name="twitter:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta property="og:type" content="article"><meta property="og:title" content="【對Vue寫一個小測試吧】－npm &amp; Webpack"><meta property="og:url" content="https://wade0615.github.io/2020/%E3%80%90%E5%B0%8DVue%E5%AF%AB%E4%B8%80%E5%80%8B%E5%B0%8F%E6%B8%AC%E8%A9%A6%E5%90%A7%E3%80%91%EF%BC%8Dnpm&amp;Webpack/"><meta property="og:site_name" content="W.S.Wade"><meta property="og:description" content="【對Vue寫一個小測試吧】－npm &amp; Webpack"><meta property="og:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="canonical" href="https://wade0615.github.io/2020/%E3%80%90%E5%B0%8DVue%E5%AF%AB%E4%B8%80%E5%80%8B%E5%B0%8F%E6%B8%AC%E8%A9%A6%E5%90%A7%E3%80%91%EF%BC%8Dnpm&amp;Webpack/"><link rel="prev" title="【對Vue寫一個小測試吧】－vue/cli &amp; vue-Loader" href="https://wade0615.github.io/2020/%E3%80%90%E5%B0%8DVue%E5%AF%AB%E4%B8%80%E5%80%8B%E5%B0%8F%E6%B8%AC%E8%A9%A6%E5%90%A7%E3%80%91%EF%BC%8DvueClivueLoader/"><link rel="next" title="【對Vue寫一個小測試吧】－前言" href="https://wade0615.github.io/2020/%E3%80%90%E5%B0%8DVue%E5%AF%AB%E4%B8%80%E5%80%8B%E5%B0%8F%E6%B8%AC%E8%A9%A6%E5%90%A7%E3%80%91%EF%BC%8D%E5%89%8D%E8%A8%80/"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-168202389-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">W.S.Wade</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">34</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">6</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><main id="content-outer"><div id="top-container" style="background-image: url(/img/typewriter.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">【對Vue寫一個小測試吧】－npm &amp; Webpack</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-05-29</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E/">想知道嗎</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-comment-o post-meta__icon fa-fw" aria-hidden="true"></i><span>評論數:</span><a href="/2020/%E3%80%90%E5%B0%8DVue%E5%AF%AB%E4%B8%80%E5%80%8B%E5%B0%8F%E6%B8%AC%E8%A9%A6%E5%90%A7%E3%80%91%EF%BC%8Dnpm&amp;Webpack/#post-comment"><span class="disqus-comment-count" data-disqus-url="https://wade0615.github.io/2020/%E3%80%90%E5%B0%8DVue%E5%AF%AB%E4%B8%80%E5%80%8B%E5%B0%8F%E6%B8%AC%E8%A9%A6%E5%90%A7%E3%80%91%EF%BC%8Dnpm&amp;Webpack/"></span></a></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><p><a href="https://medium.com/@wsw0615/%E5%B0%8Dvue%E5%AF%AB%E4%B8%80%E5%80%8B%E5%B0%8F%E6%B8%AC%E8%A9%A6%E5%90%A7-npm-webpack-e9fc34be9fcf" target="_blank" rel="noopener"><i class="fa fa-medium"></i></a></p>
+<p><img alt="img" data-src="/images/2020/%E3%80%90%E5%B0%8DVue%E5%AF%AB%E4%B8%80%E5%80%8B%E5%B0%8F%E6%B8%AC%E8%A9%A6%E5%90%A7%E3%80%91%EF%BC%8Dnpm&amp;Webpack/vueJest.png" class="lazyload"></p>
+<h2 id="npm">npm</h2>
+<p>首先要先有 npm 的環境：<br>
+<code>npm init -y</code></p>
+<p>應該大部分開發者都知道 npm 是什麼了吧？簡單來說它就是一個套件管理工具啦～方便我們利用 package.json 管理我們所有的套件，就不再多說啦～</p>
+<h2 id="WebPack">WebPack</h2>
+<p><a href="https://webpack.docschina.org/" target="_blank" rel="noopener">Webpack官網</a></p>
+<p>我們需要 WebPack 幫我們打包轉譯整個我們開發用的 JS<br>
+<code>npm install webpack webpack-cli --save-dev</code></p>
+<h3 id="初步理解">初步理解</h3>
+<p>在看了以下前輩的文章之後</p>
+<p>Alex Tzeng - Webpack 零設定，入門教學<br>
+<a href="https://ithelp.ithome.com.tw/articles/10192578" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10192578</a></p>
+<p>Alex Tzeng - 前端也需要編譯？Transpile、Compile、Minify、Uglify 基本介紹<br>
+<a href="https://ithelp.ithome.com.tw/articles/10191992" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10191992</a></p>
+<p>胡立 - webpack 新手教學之淺談模組化與 snowpack<br>
+<a href="https://blog.techbridge.cc/2020/01/22/webpack-%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8%E4%B9%8B%E6%B7%BA%E8%AB%87%E6%A8%A1%E7%B5%84%E5%8C%96%E8%88%87-snowpack/" target="_blank" rel="noopener">https://blog.techbridge.cc/2020/01/22/webpack-新手教學之淺談模組化與-snowpack/</a></p>
+<p>以下是我節錄整理出我理解的部分：</p>
+<p>Webpack 是一支<br>
+能把一個 JavaScript 檔案<br>
+轉譯成另一個 JavaScript 檔案的程式</p>
+<p>因為原生 JavaScript 不支援 像是 <code>require</code>, <code>export</code> 這些 CommonJS 定義的物件<br>
+（node.js 有支援 CommonJS 喔<br>
+所以我們寫完一份模組化的 code<br>
+實際上，丟到瀏覽器，他是執行不起來的</p>
+<p>像是常用的框架 Vue, React, Angular<br>
+都會發展出自己特別的語法<br>
+(像是 Vue 有 .vue、React 有 .jsx)<br>
+這些語法跟 Module 一樣，原生瀏覽器是不認得的<br>
+所以我們也會得把他做一次編譯</p>
+<p>編譯的過程，也叫做 打包 ，也就是 module bundler（模塊打包工具</p>
+<p>整體而言 webpack 是一個非常全能的工具<br>
+它提供了許多功能，像是</p>
+<ol>
+<li>模組編譯</li>
+<li>為 JavaScript 做 minify</li>
+<li>編譯 SASS</li>
+<li>以及一大堆一大堆⋯⋯</li>
+</ol>
+<p>webpack 的好處之一，就是我們能把使用 npm 安裝的模組一併打包，就跟打包自己寫的模組一樣，不需要多做其他事情。這件事是原生的瀏覽器沒辦法做到的。</p>
+<h3 id="手動建立一個針對-WebPack-的設定檔">手動建立一個針對 WebPack 的設定檔</h3>
+<p><code>touch webpack.config.js</code></p>
+<p>在內部設定為：</p>
+<div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const path &#x3D; require(&#39;path&#39;);</span><br><span class="line"></span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    entry: &quot;.&#x2F;app.js&quot;, &#x2F;&#x2F;引入的檔案</span><br><span class="line"></span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.resolve(__dirname, &#39;.&#x2F;dist&#39;), &#x2F;&#x2F;輸出的路徑</span><br><span class="line">        filename: &quot;build.js&quot; &#x2F;&#x2F;輸出的檔名</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在 webPack.config.js 裡 require 使用 node.js 原生的 path module<br>
+path 這個 module 是 node.js 原生就有提供的<br>
+他裡面存有不少路徑轉換的 function來供我們使用</p>
+<p>詳情可以參照 Alex 大大的<br>
+webpack.config.js - 設定第二篇 path 和 minify <a href="https://ithelp.ithome.com.tw/articles/10193608" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10193608</a></p>
+<h3 id="設定-package-json">設定 package.json</h3>
+<p>在 package.json 的 “script” 裡放入</p>
+<p><code>&quot;build&quot;: &quot;webpack --config webpack.config.js&quot;</code></p>
+<p>這樣之後只要輸入 <code>npm run build</code><br>
+他就會幫我們利用 webpack.config.js 建一個 Webpack 轉譯過的 JS 囉！</p>
+<hr>
+<p>今天就先到這啦～明天見囉！</p>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/%E3%80%90%E5%B0%8DVue%E5%AF%AB%E4%B8%80%E5%80%8B%E5%B0%8F%E6%B8%AC%E8%A9%A6%E5%90%A7%E3%80%91%EF%BC%8DvueClivueLoader/"><img class="prev_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>【對Vue寫一個小測試吧】－vue/cli &amp; vue-Loader</span></div></a></div><div class="next-post pull_right"><a href="/2020/%E3%80%90%E5%B0%8DVue%E5%AF%AB%E4%B8%80%E5%80%8B%E5%B0%8F%E6%B8%AC%E8%A9%A6%E5%90%A7%E3%80%91%EF%BC%8D%E5%89%8D%E8%A8%80/"><img class="next_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>【對Vue寫一個小測試吧】－前言</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 評論</span></div><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://wade0615.github.io/2020/%E3%80%90%E5%B0%8DVue%E5%AF%AB%E4%B8%80%E5%80%8B%E5%B0%8F%E6%B8%AC%E8%A9%A6%E5%90%A7%E3%80%91%EF%BC%8Dnpm&Webpack/';
+  this.page.identifier = '2020/【對Vue寫一個小測試吧】－npm&Webpack/';
+  this.page.title = '【對Vue寫一個小測試吧】－npm & Webpack';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'wade0615blog' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script></div></div></main><footer id="footer" style="background-image: url(/img/typewriter.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By Wade Wu</div><div class="framework-info"><span>Power by </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-plus" id="font_plus" title="放大字體"></i><i class="fa fa-minus" id="font_minus" title="縮小字體"></i><i class="darkmode fa fa-moon-o" id="darkmode" title="夜間模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="設置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直達評論"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到頂部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>

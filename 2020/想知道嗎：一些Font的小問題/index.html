@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>想知道嗎：一些Font的小問題 | W.S.Wade</title><meta name="description" content="想知道嗎：一些Font的小問題"><meta name="author" content="Wade Wu"><meta name="copyright" content="Wade Wu"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><meta name="twitter:card" content="summary"><meta name="twitter:title" content="想知道嗎：一些Font的小問題"><meta name="twitter:description" content="想知道嗎：一些Font的小問題"><meta name="twitter:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta property="og:type" content="article"><meta property="og:title" content="想知道嗎：一些Font的小問題"><meta property="og:url" content="https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E4%B8%80%E4%BA%9BFont%E7%9A%84%E5%B0%8F%E5%95%8F%E9%A1%8C/"><meta property="og:site_name" content="W.S.Wade"><meta property="og:description" content="想知道嗎：一些Font的小問題"><meta property="og:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="canonical" href="https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E4%B8%80%E4%BA%9BFont%E7%9A%84%E5%B0%8F%E5%95%8F%E9%A1%8C/"><link rel="prev" title="盛夏繁星：19-20的十件小事" href="https://wade0615.github.io/2020/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A19-20%E7%9A%84%E5%8D%81%E4%BB%B6%E5%B0%8F%E4%BA%8B/"><link rel="next" title="晨曦玩家：GameStarted" href="https://wade0615.github.io/2020/%E6%99%A8%E6%9B%A6%E7%8E%A9%E5%AE%B6%EF%BC%9AGameStarted/"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-168202389-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">W.S.Wade</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">34</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">6</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><main id="content-outer"><div id="top-container" style="background-image: url(/img/typewriter.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">想知道嗎：一些Font的小問題</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-01-28</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E/">想知道嗎</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-comment-o post-meta__icon fa-fw" aria-hidden="true"></i><span>評論數:</span><a href="/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E4%B8%80%E4%BA%9BFont%E7%9A%84%E5%B0%8F%E5%95%8F%E9%A1%8C/#post-comment"><span class="disqus-comment-count" data-disqus-url="https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E4%B8%80%E4%BA%9BFont%E7%9A%84%E5%B0%8F%E5%95%8F%E9%A1%8C/"></span></a></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><p><a href="https://medium.com/@wsw0615/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E-%E4%B8%80%E4%BA%9Bfont%E7%9A%84%E5%B0%8F%E5%95%8F%E9%A1%8C-1ea60065b372" target="_blank" rel="noopener"><i class="fa fa-medium"></i></a><br>
+來紀錄一點點在使用font 上遇到的一點小狀況吧！</p>
+<h2 id="先來簡單的複習一下-px-ex-em-rem-分別是啥">先來簡單的複習一下 px ex em rem 分別是啥</h2>
+<ul>
+<li>px：是一個相對單位，相對於「顯示設備 pixel 的高度/寬度」。</li>
+<li>ex：定義「x-height 的高度」也就是說它是一種高度單位，是字的最小方形基準尺寸。是當下font-size的小寫x高的大小。</li>
+<li>em：定義「M 字母寬」也就是說，它是一種寬度單位，是字的最大方形基準尺寸。當下font-size的大寫M寬的大小。</li>
+<li>rem：瀏覽器設定字型的 em，等同於在 body 的 em。</li>
+</ul>
+<h2 id="font-awesome-小問題">font-awesome 小問題</h2>
+<ul>
+<li>font-awesome 是被設計用來緊貼使用者專案中前後 HTML 文檔的 inline 元素</li>
+<li>而且會繼承其父層的 CSS 字體設定 style</li>
+<li>所以他是『字』！他是『字』！<br>
+<img alt="img" width="50%" data-src="https://miro.medium.com/max/546/1*6kgxWGNk0iS8CtVzcjmTVw.png" class="lazyload"><img alt="img" width="50%" data-src="https://miro.medium.com/max/545/1*xo-hIhbbpn1w-lV2bfGHKg.png" class="lazyload"></li>
+</ul>
+<p>要記得把他當成字來用喔！</p>
+<h2 id="google瀏覽器-min-font-限制">google瀏覽器 min-font 限制</h2>
+<ul>
+<li>chrome 瀏覽器會將字型小於 12px 的字形限制為 12px<br>
+認為低於12px的字對使用者閱讀是不友善的</li>
+<li>所以只要使用 12px 以下的字形都會呈現 12px 的樣式<br>
+但是 line-height 會跟著改變喔！</li>
+<li>webkit-transform: scale(0.??) 目前暫時可以將字變得更小<br>
+然而看來 transform 會破壞字的間距，使用上要再小心跟注意喔！<br>
+這篇拖稿拖了快三個禮拜，趁年假期間趕快補上囉～</li>
+</ul>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A19-20%E7%9A%84%E5%8D%81%E4%BB%B6%E5%B0%8F%E4%BA%8B/"><img class="prev_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>盛夏繁星：19-20的十件小事</span></div></a></div><div class="next-post pull_right"><a href="/2020/%E6%99%A8%E6%9B%A6%E7%8E%A9%E5%AE%B6%EF%BC%9AGameStarted/"><img class="next_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>晨曦玩家：GameStarted</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 評論</span></div><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E4%B8%80%E4%BA%9BFont%E7%9A%84%E5%B0%8F%E5%95%8F%E9%A1%8C/';
+  this.page.identifier = '2020/想知道嗎：一些Font的小問題/';
+  this.page.title = '想知道嗎：一些Font的小問題';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'wade0615blog' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script></div></div></main><footer id="footer" style="background-image: url(/img/typewriter.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By Wade Wu</div><div class="framework-info"><span>Power by </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-plus" id="font_plus" title="放大字體"></i><i class="fa fa-minus" id="font_minus" title="縮小字體"></i><i class="darkmode fa fa-moon-o" id="darkmode" title="夜間模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="設置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直達評論"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到頂部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>

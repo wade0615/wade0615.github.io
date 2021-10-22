@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>想知道嗎：Text-overflow把行尾變成… | W.S.Wade</title><meta name="description" content="想知道嗎：Text-overflow把行尾變成…"><meta name="author" content="Wade Wu"><meta name="copyright" content="Wade Wu"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><meta name="twitter:card" content="summary"><meta name="twitter:title" content="想知道嗎：Text-overflow把行尾變成…"><meta name="twitter:description" content="想知道嗎：Text-overflow把行尾變成…"><meta name="twitter:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta property="og:type" content="article"><meta property="og:title" content="想知道嗎：Text-overflow把行尾變成…"><meta property="og:url" content="https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AText-overflow%E6%8A%8A%E8%A1%8C%E5%B0%BE%E8%AE%8A%E6%88%90%E2%80%A6/"><meta property="og:site_name" content="W.S.Wade"><meta property="og:description" content="想知道嗎：Text-overflow把行尾變成…"><meta property="og:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="canonical" href="https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AText-overflow%E6%8A%8A%E8%A1%8C%E5%B0%BE%E8%AE%8A%E6%88%90%E2%80%A6/"><link rel="prev" title="想知道嗎：Vertical-align狀況題" href="https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AVertical-align%E7%8B%80%E6%B3%81%E9%A1%8C/"><link rel="next" title="盛夏繁星：2020的第一個10K" href="https://wade0615.github.io/2020/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A2020%E7%9A%84%E7%AC%AC%E4%B8%80%E5%80%8B10K/"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-168202389-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">W.S.Wade</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">34</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">6</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><main id="content-outer"><div id="top-container" style="background-image: url(/img/typewriter.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">想知道嗎：Text-overflow把行尾變成…</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-19</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E/">想知道嗎</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-comment-o post-meta__icon fa-fw" aria-hidden="true"></i><span>評論數:</span><a href="/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AText-overflow%E6%8A%8A%E8%A1%8C%E5%B0%BE%E8%AE%8A%E6%88%90%E2%80%A6/#post-comment"><span class="disqus-comment-count" data-disqus-url="https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AText-overflow%E6%8A%8A%E8%A1%8C%E5%B0%BE%E8%AE%8A%E6%88%90%E2%80%A6/"></span></a></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><p><a href="https://medium.com/@wsw0615/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E-text-overflow%E6%8A%8A%E8%A1%8C%E5%B0%BE%E8%AE%8A%E6%88%90-e86ad8bf827c" target="_blank" rel="noopener"><i class="fa fa-medium"></i></a></p>
+<p>今天來講一點視覺呈現上的小東西，我們偶爾會在一些過長的段落結尾看到像以下這樣子的呈現</p>
+<p><img alt="textOverflow" data-src="/images/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AText-overflow%E6%8A%8A%E8%A1%8C%E5%B0%BE%E8%AE%8A%E6%88%90%E2%80%A6/textOverflow.png" class="lazyload"></p>
+<p>也就是過長的段落文字被砍掉了，變成了一種未完待續的 “<code>…</code>”，這是怎麼做到的呢？</p>
+<p>讓我們把目光轉到 CSS 樣式裡一個叫 <code>text-overflow</code> 的屬性，查閱 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-overflow" target="_blank" rel="noopener">MDN</a> 可以看到</p>
+<blockquote>
+<p>text-overflow 屬性確定如何向用戶發出未顯示的溢出內容信號。它可以被剪切，顯示一個省略號（…）或顯示一個自定義字符串。</p>
+</blockquote>
+<p>咦？好像是我們在找的效果欸～但是等等！好像還有些東西～再多讀一點</p>
+<blockquote>
+<p>這個屬性只對那些在塊級元素溢出的內容有效，但是必須要與塊級元素內聯(inline)方向一致（舉個反例：內容在盒子的下方溢出。此時就不會生效）。文本可能在以下情況下溢出：當其因為某種原因而無法換行(例子：設置了”white-space:nowrap”)，或者一個單詞因為太長而不能合理地被安置(fit)。<br>
+這個屬性並不會強制“溢出”事件的發生，因此為了能讓”text-overflow”能夠生效，程序員們必須要在元素上添加幾個額外的屬性，比如”將overflow設置為hidden”。</p>
+</blockquote>
+<p>喔喔喔！其實意思就是說必須要先有</p>
+<p><code>overflow : hidden;</code> 限制超出邊界的文字隱藏<br>
+<code>white-space : nowrap;</code> 限制文字不換行</p>
+<p>然後<br>
+<code>text-overflow</code> 才會生效</p>
+<p>稍微搞懂之後照著做應該都能成功啦～但是因為設定了<code>white-space : nowrap;</code> 的關係，整段文字只會有一行，所以只有單行文字的時候超出空間範圍才會變成<code>...</code>，那如果我想要做到兩行或是三行文字之後才變成<code>...</code>呢？該怎麼辦呢？</p>
+<p>讓我們再看向另外一個東西 <code>-webkit-line-clamp</code> 的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/-webkit-line-clamp" target="_blank" rel="noopener">MDN</a> ，裡面提到</p>
+<blockquote>
+<p>-webkit-line-clamp CSS屬性可以把塊容器中的內容限制為指定的行數.<br>
+它只有在 display屬性設置成 -webkit-box或者 -webkit-inline-box 並且-webkit-box-orient 屬性設置成vertical時才有效果。</p>
+</blockquote>
+<p>喔喔喔！看起來也很簡單嘛～但是</p>
+<h2 id="注意！注意！">注意！注意！</h2>
+<p>瀏覽器支援度</p>
+<p><img alt="img" data-src="/images/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AText-overflow%E6%8A%8A%E8%A1%8C%E5%B0%BE%E8%AE%8A%E6%88%90%E2%80%A6/compatibility.png" class="lazyload"></p>
+<p>也就是小廢物 ＩＥ 並不支援啊！而且看 <a href="https://drafts.csswg.org/css-overflow-3/#propdef--webkit-line-clamp" target="_blank" rel="noopener">w3.org規範</a> 可以知道這個屬性還在 Working Draft 階段，使用上要注意喔！</p>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AVertical-align%E7%8B%80%E6%B3%81%E9%A1%8C/"><img class="prev_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>想知道嗎：Vertical-align狀況題</span></div></a></div><div class="next-post pull_right"><a href="/2020/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A2020%E7%9A%84%E7%AC%AC%E4%B8%80%E5%80%8B10K/"><img class="next_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>盛夏繁星：2020的第一個10K</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 評論</span></div><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AText-overflow%E6%8A%8A%E8%A1%8C%E5%B0%BE%E8%AE%8A%E6%88%90%E2%80%A6/';
+  this.page.identifier = '2020/想知道嗎：Text-overflow把行尾變成…/';
+  this.page.title = '想知道嗎：Text-overflow把行尾變成…';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'wade0615blog' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script></div></div></main><footer id="footer" style="background-image: url(/img/typewriter.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By Wade Wu</div><div class="framework-info"><span>Power by </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-plus" id="font_plus" title="放大字體"></i><i class="fa fa-minus" id="font_minus" title="縮小字體"></i><i class="darkmode fa fa-moon-o" id="darkmode" title="夜間模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="設置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直達評論"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到頂部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>

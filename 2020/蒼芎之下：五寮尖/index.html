@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>蒼芎之下：五寮尖 | W.S.Wade</title><meta name="description" content="蒼芎之下：五寮尖"><meta name="author" content="Wade Wu"><meta name="copyright" content="Wade Wu"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><meta name="twitter:card" content="summary"><meta name="twitter:title" content="蒼芎之下：五寮尖"><meta name="twitter:description" content="蒼芎之下：五寮尖"><meta name="twitter:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta property="og:type" content="article"><meta property="og:title" content="蒼芎之下：五寮尖"><meta property="og:url" content="https://wade0615.github.io/2020/%E8%92%BC%E8%8A%8E%E4%B9%8B%E4%B8%8B%EF%BC%9A%E4%BA%94%E5%AF%AE%E5%B0%96/"><meta property="og:site_name" content="W.S.Wade"><meta property="og:description" content="蒼芎之下：五寮尖"><meta property="og:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="canonical" href="https://wade0615.github.io/2020/%E8%92%BC%E8%8A%8E%E4%B9%8B%E4%B8%8B%EF%BC%9A%E4%BA%94%E5%AF%AE%E5%B0%96/"><link rel="prev" title="【對Vue寫一個小測試吧】－前言" href="https://wade0615.github.io/2020/%E3%80%90%E5%B0%8DVue%E5%AF%AB%E4%B8%80%E5%80%8B%E5%B0%8F%E6%B8%AC%E8%A9%A6%E5%90%A7%E3%80%91%EF%BC%8D%E5%89%8D%E8%A8%80/"><link rel="next" title="想知道嗎：我怎麼學接API這件事" href="https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E6%88%91%E6%80%8E%E9%BA%BC%E5%AD%B8%E6%8E%A5API%E9%80%99%E4%BB%B6%E4%BA%8B/"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-168202389-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">W.S.Wade</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">34</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">6</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><main id="content-outer"><div id="top-container" style="background-image: url(/img/typewriter.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">蒼芎之下：五寮尖</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-04-12</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B/">蒼穹之下</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-comment-o post-meta__icon fa-fw" aria-hidden="true"></i><span>評論數:</span><a href="/2020/%E8%92%BC%E8%8A%8E%E4%B9%8B%E4%B8%8B%EF%BC%9A%E4%BA%94%E5%AF%AE%E5%B0%96/#post-comment"><span class="disqus-comment-count" data-disqus-url="https://wade0615.github.io/2020/%E8%92%BC%E8%8A%8E%E4%B9%8B%E4%B8%8B%EF%BC%9A%E4%BA%94%E5%AF%AE%E5%B0%96/"></span></a></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><p><a href="https://medium.com/@wsw0615/%E8%92%BC%E8%8A%8E%E4%B9%8B%E4%B8%8B-%E4%BA%94%E5%AF%AE%E5%B0%96-aa5af37f1d2f" target="_blank" rel="noopener"><i class="fa fa-medium"></i></a></p>
+<h2 id="轉身入山">轉身入山</h2>
+<p>4/11 凌晨 5:50，躍身下床，在微弱的晨曦之中跳上機車，急促的催動著油門，我要在 6:45 之前抵達板橋，搭上前往 三峽 五寮尖登山口 的陳家直達順風車，開始這半天的山行，我、姿穎、姿穎姐 - 柏伶 三人順利抵達之後，靜候著因為蛋餅而稍微小遲到的兩位高手 老余 與 泊瑜，腳上穿著 EnPing 及時贈送的登山鞋，戴上熟悉的露指手套，踏上石階，感受著穿過林葉的晨光，腿部肌肉每一次的伸展，平衡著稍微傾斜的四肢，用力一蹬，邁開步伐進入山林之中。</p>
+<p><img alt="img" data-src="/images/2020/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E4%BA%94%E5%AF%AE%E5%B0%96/93219346_226306125104870_8516369258282745856_n.jpg" class="lazyload"></p>
+<h2 id="山上的緣分">山上的緣分</h2>
+<p>姿穎 帶頭衝鋒著，為我們開闢路徑，柏伶 緊跟在後，仔細聽著 姿穎 的叮嚀，我看著 柏伶 的腳步，小心地提示她哪些岩塊可以當踩點，老余 &amp; 泊瑜 真不愧是經驗豐富的登山者，一邊吃著蛋餅一邊聊天，還可以輕鬆地跟上我們一群菜鳥。</p>
+<p>整段路徑陡上的岩區與緩坡密集的交錯著，好幾次以為還有緩坡之際，另一塊帶有攀繩的岩石又聳立在眼前，我跟 姿穎 可興奮著，柏伶 可就傻眼了，畢竟第一次被妹妹騙上山來玩，就是如此光景，恐怕一般人都哭笑不得吧！</p>
+<p>路上遇到兩位有趣的大哥們，姿穎 一時的口誤，直接叫人家「阿伯」，叫的人家心都碎了，好險大哥們也是幽默風趣又不計較，暢談笑鬧著，一步一步，我們越來越接近稜線了。</p>
+<p><img alt="img" width="50%" data-src="/images/2020/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E4%BA%94%E5%AF%AE%E5%B0%96/93208850_537170970271683_2160756359665025024_n.jpg" class="lazyload"><img alt="img" width="50%" data-src="/images/2020/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E4%BA%94%E5%AF%AE%E5%B0%96/92939760_660166301219038_696986055844298752_n.jpg" class="lazyload"></p>
+<h2 id="來自大地的療癒">來自大地的療癒</h2>
+<p>專注在石縫間的每一刻，都使我忘卻在山下的紛擾，稜線上的風帶有一種溫柔，輕輕的拭去我腦中過多的擔憂，再輕輕的推我一把，祝福著我下一步的啟程，微濕土壤上的腳印彷彿正說著，我們不是第一個跨過她的人，一百個不同的人就有一百個不同的故事，也有著一百個不同的選擇，而這麼不一樣的我們，也終究在這山谷中相遇、交錯、歡笑，一生的繩結在此刻交織著，編織出絢爛永恆的瞬間。</p>
+<p><img alt="img" width="50%" data-src="/images/2020/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E4%BA%94%E5%AF%AE%E5%B0%96/93277452_3180983641920738_7865587146348822528_n.jpg" class="lazyload"><img alt="img" width="50%" data-src="/images/2020/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E4%BA%94%E5%AF%AE%E5%B0%96/93543703_885842918506267_1157636390855376896_n.jpg" class="lazyload"></p>
+<h2 id="終歸知往">終歸知往</h2>
+<p>由於在出發前就做過功課，知道過中午後會有鋒面迎來，每過一分鐘，下雨的機率便會直線上升，因此我們在六號鞍部就轉身下山，並未在山林間多做停留，也順利的在12點前即抵達出發時的登山口，啟程前往三峽老街補充能量。</p>
+<p>年初曾許願今年要爬更多的山，四月就迎來了這般的體驗，我想我會繼續爬下去，而接下來，我對照片中斑駁蓊鬱的眠月線，產生了極大的興趣。</p>
+<blockquote>
+<p>我將再次，奔赴群山。</p>
+</blockquote>
+<p><img alt="img" data-src="/images/2020/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E4%BA%94%E5%AF%AE%E5%B0%96/93409539_670188400435038_6598552780208603136_n.jpg" class="lazyload"></p>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/%E3%80%90%E5%B0%8DVue%E5%AF%AB%E4%B8%80%E5%80%8B%E5%B0%8F%E6%B8%AC%E8%A9%A6%E5%90%A7%E3%80%91%EF%BC%8D%E5%89%8D%E8%A8%80/"><img class="prev_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>【對Vue寫一個小測試吧】－前言</span></div></a></div><div class="next-post pull_right"><a href="/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E6%88%91%E6%80%8E%E9%BA%BC%E5%AD%B8%E6%8E%A5API%E9%80%99%E4%BB%B6%E4%BA%8B/"><img class="next_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>想知道嗎：我怎麼學接API這件事</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 評論</span></div><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://wade0615.github.io/2020/%E8%92%BC%E8%8A%8E%E4%B9%8B%E4%B8%8B%EF%BC%9A%E4%BA%94%E5%AF%AE%E5%B0%96/';
+  this.page.identifier = '2020/蒼芎之下：五寮尖/';
+  this.page.title = '蒼芎之下：五寮尖';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'wade0615blog' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script></div></div></main><footer id="footer" style="background-image: url(/img/typewriter.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By Wade Wu</div><div class="framework-info"><span>Power by </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-plus" id="font_plus" title="放大字體"></i><i class="fa fa-minus" id="font_minus" title="縮小字體"></i><i class="darkmode fa fa-moon-o" id="darkmode" title="夜間模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="設置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直達評論"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到頂部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>蒼穹之下：鳶嘴山 | W.S.Wade</title><meta name="description" content="蒼穹之下：鳶嘴山"><meta name="author" content="Wade Wu"><meta name="copyright" content="Wade Wu"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><meta name="twitter:card" content="summary"><meta name="twitter:title" content="蒼穹之下：鳶嘴山"><meta name="twitter:description" content="蒼穹之下：鳶嘴山"><meta name="twitter:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta property="og:type" content="article"><meta property="og:title" content="蒼穹之下：鳶嘴山"><meta property="og:url" content="https://wade0615.github.io/2019/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%B3%B6%E5%98%B4%E5%B1%B1/"><meta property="og:site_name" content="W.S.Wade"><meta property="og:description" content="蒼穹之下：鳶嘴山"><meta property="og:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="canonical" href="https://wade0615.github.io/2019/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%B3%B6%E5%98%B4%E5%B1%B1/"><link rel="prev" title="菁英計畫：小山共乘" href="https://wade0615.github.io/2020/%E8%8F%81%E8%8B%B1%E8%A8%88%E7%95%AB%EF%BC%9A%E5%B0%8F%E5%B1%B1%E5%85%B1%E4%B9%98/"><link rel="next" title="菁英計畫：奧德賽ChallengeCamp" href="https://wade0615.github.io/2019/%E8%8F%81%E8%8B%B1%E8%A8%88%E7%95%AB%EF%BC%9A%E5%A5%A7%E5%BE%B7%E8%B3%BDChallengeCamp/"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-168202389-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">W.S.Wade</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">34</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">6</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><main id="content-outer"><div id="top-container" style="background-image: url(/img/typewriter.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">蒼穹之下：鳶嘴山</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-12-21</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B/">蒼穹之下</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-comment-o post-meta__icon fa-fw" aria-hidden="true"></i><span>評論數:</span><a href="/2019/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%B3%B6%E5%98%B4%E5%B1%B1/#post-comment"><span class="disqus-comment-count" data-disqus-url="https://wade0615.github.io/2019/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%B3%B6%E5%98%B4%E5%B1%B1/"></span></a></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><p><a href="https://medium.com/@wsw0615/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B-%E9%B3%B6%E5%98%B4%E5%B1%B1-60655a711603" target="_blank" rel="noopener"><i class="fa fa-medium"></i></a></p>
+<h4 id="To-see-the-world-things-dangerous-to-come-to-to-see-behind-walls-draw-closer-to-find-each-other-and-to-feel-That-is-the-purpose-of-life">To see the world, things dangerous to come to, to see behind walls, draw closer, to find each other and to feel. That is the purpose of life.</h4>
+<h4 id="開拓視野，突破萬難，看見世界，貼近彼此，感受生活，這就是生活的目的">開拓視野，突破萬難，看見世界，貼近彼此，感受生活，這就是生活的目的</h4>
+<p><img alt="img" data-src="/images/2020/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%B3%B6%E5%98%B4%E5%B1%B1/20191213_143733.jpg" class="lazyload"></p>
+<p>自從老余說過她曾有過多次爬山的故事，我便開始嚮往這樣的體驗，也早就預約請她帶我見識群山的壯闊，12月中我們一群在好想工作室的夥伴們，報名了位於台中 Monospace 的 GDG 黑客松，於是便順勢規劃了在前一天，也就是 12/13 （五），前往位於 東勢鄉的 鳶嘴山。</p>
+<p>「叩啦～」窗外一片漆黑，我竟然已經鎖門出發前往台南火車站，除了整晚沒睡看日出之外，我還真想不起來上次這麼早起看到日出是什麼時候，搭乘6:42的自強號前往豐原火車站之後，在我曾來面試時經過的一家租車機車行租了6台機車，浩浩蕩蕩地像是一群大學生出遊般的出發了。</p>
+<h2 id="出發">出發</h2>
+<p>因為一些個人原因，我有許久都不敢過來台中與豐原一帶，然而這次完全刷新我對這個地方的記憶，隨著山路海拔越來越高，每過一個彎，氣溫就明顯感覺到又下降了一點，最後在抵達 大棟派出所 登記入山登記之前大夥就受不了在路邊停下來穿衣服，好險派出所有可以裝熱水暖手的地方，不然大夥的雙手還真的要凍死惹。</p>
+<p>從台南出發的關係，我們抵達鳶嘴山登山口的時候已經11.點多了，才剛開始沒多久就中午啦！餓爆！於是找到了一個平台在嚮導 EnPing 的命令之下，大夥席地而坐就地開動！麵包、餅乾、巧克力、糖果、豆漿、香蕉…食物種類無奇不有，看來我果然還是太小看大家帶存糧的想像力了啊～</p>
+<h2 id="第一面牆">第一面牆</h2>
+<p>再次啟程，一路上搖搖晃晃，經過一個又一個狹窄的林間山路之後，終於抵達第一片需要用到繩索的岩壁啦！略帶興奮地往前站了一點，想看清楚這對我緊張又新鮮的第一次體驗長什麼樣子，「喔！尬的！尬的！等下一定要幫我拍照！」，雖然看起來似乎很窄又可怕，不過其實踩點很多而且也都很穩固，重心緊貼著牆壁的甚至可以幾乎不用抓繩，新手上路～有這樣的開場應該算是不錯了吧～</p>
+<p>隨後是一連串的岩石堆，雖然不至於緊貼著懸崖，但對我們這群菜鳥而言也絕非易事，是需要小心應對的挑戰，前有 EnPing 開路，後有 Teng 壓隊，老余則在岩石上飛簷走壁著，前後照看著我們這群新手。</p>
+<p>隨著旅程的推進，可能跟迎風面或是有沒有照到太陽有關，我的體感溫度也是不斷忽冷忽熱的，外套一直穿穿脫脫，而且反而越是接近山頂，感覺越來越溫暖，到最後就將外套收進包包內了。</p>
+<p>越是往上爬，越有感覺周圍的樹木越來越少，石頭越來越多，順著岩壁上的繩索指引，其實並不難找到該如何往上前進，路上還在石縫中找到其他人亂丟的飲料紙杯，欸一！垃圾不要這樣亂丟啊！（撿</p>
+<p>在一些稍微開闊可以站穩坐穩的地方，我都偷偷藉由拍照的方式，休息一下，啊！這應該就是老余教的偷休息的技巧之一吧！</p>
+<h2 id="封頂">封頂</h2>
+<h4 id="Stop-dreaming-Start-living">Stop dreaming,Start living.</h4>
+<p><img alt="img" data-src="/images/2020/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%B3%B6%E5%98%B4%E5%B1%B1/20191213_143845.jpg" class="lazyload"></p>
+<p>爬了這麼久，就是為了要當『真．雲端工程師』啊！原本一開始還在想說 TzuYing 幹嘛要千辛萬苦背著電腦上來，直到她在 2180 公尺的山峰上拿出電腦來裝Ｂ的那一刻，喔乾乾乾乾乾乾！根本裝Ｂ大師啊！我跟汪汪隨即跟上效仿，大頭貼換起來囉！</p>
+<p>等到我們三個裝Ｂ仔終於拍完照片，大家都已經在碎石頭上坐到屁股痛死，餅乾也不知道吃掉幾包惹，幾位登山老手們盤算了一下時間，催促著大家東西收一收趕快再次出發，必定要在天黑之前下山。</p>
+<p>以為前面已經是這座山最難的部分的我，真的是完完全全的小看了他啊！繞過樹叢之後…等等！我們要爬這個下山嗎！？綿延不絕的岩石與遠看依稀可見的幾個光凸凸的山丘，看起來就不怎麼友善，果然…有好幾個點都是要 EnPing 仔細指導大家要怎麼踩，並且一個傳話一個，才有辦法順利翻過去。</p>
+<p>隨著雲彩逐漸被渲染成溫暖的橘紅色，欣賞美景的同時也代表著夜幕即將降臨，大夥腳步也逐漸加快，並且擁有著一種一個照顧一個的默契，每個人都幫下一個人看他的踩點跟提醒注意安全，下山的過程也小心翼翼地用到了一點攀岩跟垂降的小技巧，先踩穩！再往下。</p>
+<p>終於脫離岩石區啦～樹林越來越多，天氣也逐漸又冷了起來，穿起外套，脫下手套，閉著眼，感受著一顆特別粗壯的大樹的溫度，「你啊～在這裡站了很久了吧？」，僅存的斜陽穿過樹林，與阿席達卡初見山獸神的畫面有幾分相似，我們在這般唯美的畫中吃著尚存的零食補給，唱著中二又充滿回憶的歌曲，邁步走完最後的一小段路，在天黑之前離開了鳶嘴山登山步道。</p>
+<h4 id="自此，這段旅程開啟了我人生中一個新的篇章。">自此，這段旅程開啟了我人生中一個新的篇章。</h4>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/%E8%8F%81%E8%8B%B1%E8%A8%88%E7%95%AB%EF%BC%9A%E5%B0%8F%E5%B1%B1%E5%85%B1%E4%B9%98/"><img class="prev_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>菁英計畫：小山共乘</span></div></a></div><div class="next-post pull_right"><a href="/2019/%E8%8F%81%E8%8B%B1%E8%A8%88%E7%95%AB%EF%BC%9A%E5%A5%A7%E5%BE%B7%E8%B3%BDChallengeCamp/"><img class="next_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>菁英計畫：奧德賽ChallengeCamp</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 評論</span></div><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://wade0615.github.io/2019/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E9%B3%B6%E5%98%B4%E5%B1%B1/';
+  this.page.identifier = '2019/蒼穹之下：鳶嘴山/';
+  this.page.title = '蒼穹之下：鳶嘴山';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'wade0615blog' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script></div></div></main><footer id="footer" style="background-image: url(/img/typewriter.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By Wade Wu</div><div class="framework-info"><span>Power by </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-plus" id="font_plus" title="放大字體"></i><i class="fa fa-minus" id="font_minus" title="縮小字體"></i><i class="darkmode fa fa-moon-o" id="darkmode" title="夜間模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="設置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直達評論"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到頂部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>想知道嗎：JS-Selectors | W.S.Wade</title><meta name="description" content="想知道嗎：JS-Selectors"><meta name="author" content="Wade Wu"><meta name="copyright" content="Wade Wu"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><meta name="twitter:card" content="summary"><meta name="twitter:title" content="想知道嗎：JS-Selectors"><meta name="twitter:description" content="想知道嗎：JS-Selectors"><meta name="twitter:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta property="og:type" content="article"><meta property="og:title" content="想知道嗎：JS-Selectors"><meta property="og:url" content="https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AJS-Selectors/"><meta property="og:site_name" content="W.S.Wade"><meta property="og:description" content="想知道嗎：JS-Selectors"><meta property="og:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="canonical" href="https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AJS-Selectors/"><link rel="prev" title="盛夏繁星：2020的第一個10K" href="https://wade0615.github.io/2020/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A2020%E7%9A%84%E7%AC%AC%E4%B8%80%E5%80%8B10K/"><link rel="next" title="盛夏繁星：19-20的十件小事" href="https://wade0615.github.io/2020/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A19-20%E7%9A%84%E5%8D%81%E4%BB%B6%E5%B0%8F%E4%BA%8B/"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-168202389-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">W.S.Wade</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">34</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">6</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><main id="content-outer"><div id="top-container" style="background-image: url(/img/typewriter.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">想知道嗎：JS-Selectors</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-02-12</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E/">想知道嗎</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-comment-o post-meta__icon fa-fw" aria-hidden="true"></i><span>評論數:</span><a href="/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AJS-Selectors/#post-comment"><span class="disqus-comment-count" data-disqus-url="https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AJS-Selectors/"></span></a></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><p><a href="https://medium.com/@wsw0615/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E-js-selectors-3c8e3f4de93a" target="_blank" rel="noopener"><i class="fa fa-medium"></i></a></p>
+<p>自己在參與一些簡單的活動與有趣的專案時，提前接觸到了 JS 相關的應用，查閱資料的時候發現，要用 JS 選取到我想要的 HTML DOM 元素時，有眼花撩亂的四種方式！我的天…搞什麼啊…因此決定簡單的記錄一下這件事。</p>
+<h2 id="document-querySelector"><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Document/querySelector" target="_blank" rel="noopener">document.querySelector</a></h2>
+<ul>
+<li>回傳 document 第一個符合特定選擇器群組的元素</li>
+<li>只有第一個！</li>
+<li>可以藉由語法 <code>.class</code> 跟 <code>#id</code> 選到 class 或 id</li>
+</ul>
+<h2 id="Document-querySelectorAll"><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/querySelectorAll" target="_blank" rel="noopener">Document.querySelectorAll</a></h2>
+<ul>
+<li>返回與指定的選擇器組匹配的文檔中的元素列表。返回的對像是 NodeList 。</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList" target="_blank" rel="noopener">NodeList</a> 並不是 Array, 但是被允許可以用 <code>forEach()</code> 的方式來進行操作。 他也可以藉由 <code>Array.from()</code> 的方式來轉換成一個真正的陣列。</li>
+</ul>
+<h2 id="document-getElementById"><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/getElementById" target="_blank" rel="noopener">document.getElementById</a></h2>
+<ul>
+<li>回傳一個符合 id 選項的元素</li>
+<li><code>getElementById()</code> 只有在作為 document 的方法時才能起作用，而在DOM中的其他元素下無法生效。</li>
+</ul>
+<h2 id="Document-getElementsByClassName"><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/getElementsByClassName" target="_blank" rel="noopener">Document.getElementsByClassName()</a></h2>
+<ul>
+<li>注意我是 Elements ，有 s ，<code>getElementById</code> 沒有 s</li>
+<li>針對所有給定的 class 子元素，回傳類似陣列的物件。（似乎不是NodeList唷！</li>
+</ul>
+<p>常見的這四種方式中可以發現，<code>querySelector</code> 其實已經可以做到 <code>getElementById</code> 跟 <code>getElementsByClassName</code> 在做的事了，我的疑問是…那既然 <code>querySelector</code> 這麼厲害，為何還需要其他這兩個東西呢？有了 <code>querySelector</code> 之後，<s>要你們何用？（誤</s></p>
+<p>目前我只有找到一個小線索，也就是 <code>getElementById</code> 跟 <code>getElementsByClassName</code> 在 1998 年的 <a href="https://www.w3.org/TR/REC-DOM-Level-1/level-one-html" target="_blank" rel="noopener">Spec — Document Object Model (HTML) Level 1</a> 就有出現了，然而 <code>document.querySelector</code> 在 2013 年的 <a href="https://www.w3.org/TR/selectors-api/" target="_blank" rel="noopener">Spec — Selectors API Level 1</a> 才被我找到，似乎是 <code>document.querySelector</code> 比較晚出現啊～或許是因為…雖然後來出現了方便且功能強大的 <code>document.querySelector</code> 可以做到兩位前輩在做的事，但是為了比較好的維護在他出來之前就使用 <code>getElementById</code> 跟 <code>getElementsByClassName</code> 的程式碼，所以就沒有淘汰他們了吧（？</p>
+<p>然而這個結論也都只是我的猜測而已，並沒有找到一個實質的證據來支持並證實我的猜測，如果有路過的大神知道為什麼的話～拜託留言或是寄信告訴我吧～我是真的很好奇想知道啊啊啊！</p>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2020/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A2020%E7%9A%84%E7%AC%AC%E4%B8%80%E5%80%8B10K/"><img class="prev_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>盛夏繁星：2020的第一個10K</span></div></a></div><div class="next-post pull_right"><a href="/2020/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A19-20%E7%9A%84%E5%8D%81%E4%BB%B6%E5%B0%8F%E4%BA%8B/"><img class="next_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>盛夏繁星：19-20的十件小事</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 評論</span></div><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AJS-Selectors/';
+  this.page.identifier = '2020/想知道嗎：JS-Selectors/';
+  this.page.title = '想知道嗎：JS-Selectors';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'wade0615blog' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script></div></div></main><footer id="footer" style="background-image: url(/img/typewriter.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By Wade Wu</div><div class="framework-info"><span>Power by </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-plus" id="font_plus" title="放大字體"></i><i class="fa fa-minus" id="font_minus" title="縮小字體"></i><i class="darkmode fa fa-moon-o" id="darkmode" title="夜間模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="設置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直達評論"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到頂部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>

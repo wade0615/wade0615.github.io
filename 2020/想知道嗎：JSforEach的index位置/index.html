@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>想知道嗎：JSforEach的index位置 | W.S.Wade</title><meta name="description" content="想知道嗎：JSforEach的index位置"><meta name="author" content="Wade Wu"><meta name="copyright" content="Wade Wu"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><meta name="twitter:card" content="summary"><meta name="twitter:title" content="想知道嗎：JSforEach的index位置"><meta name="twitter:description" content="想知道嗎：JSforEach的index位置"><meta name="twitter:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta property="og:type" content="article"><meta property="og:title" content="想知道嗎：JSforEach的index位置"><meta property="og:url" content="https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AJSforEach%E7%9A%84index%E4%BD%8D%E7%BD%AE/"><meta property="og:site_name" content="W.S.Wade"><meta property="og:description" content="想知道嗎：JSforEach的index位置"><meta property="og:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="canonical" href="https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AJSforEach%E7%9A%84index%E4%BD%8D%E7%BD%AE/"><link rel="prev" title="想知道嗎：“in”與“function in object”" href="https://wade0615.github.io/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E2%80%9Cin%E2%80%9D%E8%88%87%E2%80%9CfunctionInObject%E2%80%9D/"><link rel="next" title="蒼穹之下：烏岩角" href="https://wade0615.github.io/2020/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E7%83%8F%E5%B2%A9%E8%A7%92/"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-168202389-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">W.S.Wade</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">34</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">6</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><main id="content-outer"><div id="top-container" style="background-image: url(/img/typewriter.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">想知道嗎：JSforEach的index位置</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2020-08-27</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E/">想知道嗎</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-comment-o post-meta__icon fa-fw" aria-hidden="true"></i><span>評論數:</span><a href="/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AJSforEach%E7%9A%84index%E4%BD%8D%E7%BD%AE/#post-comment"><span class="disqus-comment-count" data-disqus-url="https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AJSforEach%E7%9A%84index%E4%BD%8D%E7%BD%AE/"></span></a></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><p><a href="https://medium.com/@wsw0615/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E-js-foreach-%E7%9A%84-index-%E4%BD%8D%E7%BD%AE-37f8751c73a2" target="_blank" rel="noopener"><i class="fa fa-medium"></i></a></p>
+<p><img alt="img" width="100%" data-src="/images/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AJSforEach%E7%9A%84index%E4%BD%8D%E7%BD%AE/JS.jpeg" class="lazyload"></p>
+<p>前一陣子在應用 JS 的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank" rel="noopener">Array.prototype.forEach()</a> 時，因為有需求要調用 index 這個隱含參數，然而在 coding 的過程中稍不留意，在不同的地方寫出了類似以下兩種將 e 跟 index 位置互換的寫法</p>
+<div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var array &#x3D; [1,2,3]</span><br><span class="line">array.forEach((e,index) &#x3D;&gt; console.log((e + 1),index))</span><br><span class="line">array.forEach((index,e) &#x3D;&gt; console.log((e + 1),index))</span><br></pre></td></tr></table></figure>
+<p>一時之間還沒注意到有什麼不同，然而到我自己在 code review 檢查時，除了發現自己怎麼有兩種寫法外，還發現了這樣會使 console.log print 出來的東西略有不同</p>
+<img style="display: block;margin: 0 auto;width: 60%" data-src="/images/2020/想知道嗎：JSforEach的index位置/code1.png" class="lazyload">
+<img style="display: block;margin: 0 auto;width: 50%" data-src="/images/2020/想知道嗎：JSforEach的index位置/waitWhat.gif" class="lazyload">
+<p>我以為的 e 應該就是 陣列目前正在 forEach 處理的單項元素，而 index 就是 陣列目前正在 forEach 處理的元素索引 ，其實這樣的理解也沒有錯，但我以為的是，第二種寫法：</p>
+<div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.forEach((index,e) &#x3D;&gt; console.log((e + 1),index))</span><br></pre></td></tr></table></figure>
+<p>也會 print 出這樣的結果：</p>
+<img style="display: block;margin: 0 auto;width: 7%" data-src="/images/2020/想知道嗎：JSforEach的index位置/code2.png" class="lazyload">
+<p>然而結果居然與我想的不一樣！各位讀者知道為什麼嗎？<br>
+以下要來公布解答囉！</p>
+<hr>
+<p>百思不得其解的情況下，求助了當初在 好想工作室 同期的學員，我們的班長 Yachen大人，而她一語道破我的盲點…</p>
+<blockquote>
+<p>Yachen：foreach(item, index) 是 js 的隱含參數，第一個參數就是遍歷的元素，第二個參數是 index，即使改參數名字，第一個也一定是遍歷的元素，第二個一定是 index，名字只是障眼法哈哈</p>
+</blockquote>
+<p>完全點破啊！看完立刻了解，我只是將 陣列目前正在 forEach 處理的單項元素 命名從 e 改成 index ，而將 陣列目前正在 forEach 處理的元素索引 命名從 index 改成 e ，他的本質意義並沒有改變，畢竟 callback 函數中所帶的參數，並不是用名字來區分，而是依次向callback函數傳入三個參數啊！</p>
+<img style="display: block;margin: 0 auto;width: 40%" data-src="/images/2020/想知道嗎：JSforEach的index位置/ohNo.gif" class="lazyload"></div></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E2%80%9Cin%E2%80%9D%E8%88%87%E2%80%9CfunctionInObject%E2%80%9D/"><img class="prev_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>想知道嗎：“in”與“function in object”</span></div></a></div><div class="next-post pull_right"><a href="/2020/%E8%92%BC%E7%A9%B9%E4%B9%8B%E4%B8%8B%EF%BC%9A%E7%83%8F%E5%B2%A9%E8%A7%92/"><img class="next_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>蒼穹之下：烏岩角</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 評論</span></div><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://wade0615.github.io/2020/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9AJSforEach%E7%9A%84index%E4%BD%8D%E7%BD%AE/';
+  this.page.identifier = '2020/想知道嗎：JSforEach的index位置/';
+  this.page.title = '想知道嗎：JSforEach的index位置';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'wade0615blog' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script></div></div></main><footer id="footer" style="background-image: url(/img/typewriter.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By Wade Wu</div><div class="framework-info"><span>Power by </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-plus" id="font_plus" title="放大字體"></i><i class="fa fa-minus" id="font_minus" title="縮小字體"></i><i class="darkmode fa fa-moon-o" id="darkmode" title="夜間模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="設置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直達評論"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到頂部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>

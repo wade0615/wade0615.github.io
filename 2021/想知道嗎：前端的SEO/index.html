@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>想知道嗎：前端的SEO | W.S.Wade</title><meta name="description" content="想知道嗎：前端的SEO"><meta name="author" content="Wade Wu"><meta name="copyright" content="Wade Wu"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><meta name="twitter:card" content="summary"><meta name="twitter:title" content="想知道嗎：前端的SEO"><meta name="twitter:description" content="想知道嗎：前端的SEO"><meta name="twitter:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta property="og:type" content="article"><meta property="og:title" content="想知道嗎：前端的SEO"><meta property="og:url" content="https://wade0615.github.io/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E5%89%8D%E7%AB%AF%E7%9A%84SEO/"><meta property="og:site_name" content="W.S.Wade"><meta property="og:description" content="想知道嗎：前端的SEO"><meta property="og:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="canonical" href="https://wade0615.github.io/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E5%89%8D%E7%AB%AF%E7%9A%84SEO/"><link rel="next" title="盛夏繁星：第二次機會" href="https://wade0615.github.io/2021/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%A9%9F%E6%9C%83/"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-168202389-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">W.S.Wade</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">35</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">6</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><main id="content-outer"><div id="top-container" style="background-image: url(/img/typewriter.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">想知道嗎：前端的SEO</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2021-11-11</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E/">想知道嗎</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-comment-o post-meta__icon fa-fw" aria-hidden="true"></i><span>評論數:</span><a href="/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E5%89%8D%E7%AB%AF%E7%9A%84SEO/#post-comment"><span class="disqus-comment-count" data-disqus-url="https://wade0615.github.io/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E5%89%8D%E7%AB%AF%E7%9A%84SEO/"></span></a></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h4 id="來聊聊-SEO-這件事，以及身為前端我們可以做什麼事吧">來聊聊 SEO 這件事，以及身為前端我們可以做什麼事吧</h4>
+<h2 id="為什麼提到-SEO-的時候，我們只討論-Google？">為什麼提到 SEO 的時候，我們只討論 Google？</h2>
+<p>因為它是目前市佔率最大、也是最重要的搜尋引擎（沒有之一）</p>
+<p><img alt data-src="https://i.imgur.com/Xbp8TfZ.png" class="lazyload"><br>
+<span>台灣搜尋引擎市佔率 (2020/07)。</span></p>
+<p>至於 Amazon、Youtube 因為有各自的商業生態，所以 SEO 也是各自分開討論，而且會特別強調「Youtube SEO」、「Amazon SEO」等，不會併在一般的 SEO 主題討論。</p>
+<h2 id="搜尋引擎-Search-Engine-的運作原理是什麼？">搜尋引擎 (Search Engine) 的運作原理是什麼？</h2>
+<p><a href="https://www.youtube.com/watch?v=BNHR6IQJGZs&amp;ab_channel=Google" target="_blank" rel="noopener">How it works</a></p>
+<p>搜尋引擎運作可以分成以下三大部分：</p>
+<ul>
+<li>爬文 (Crawling)</li>
+<li>收錄 (Indexing)</li>
+<li>排名 (Ranking)</li>
+</ul>
+<h3 id="爬文">爬文</h3>
+<p>Google 會使用網路爬蟲 (Crawler)，或稱爬文蜘蛛 (Spider) 在網際網路上爬文、收集資料。</p>
+<p>爬文蜘蛛會透過網頁和網頁之間的連結探索新的網頁，並且不斷重複使用同樣手法進一步擴張和抓取更多資料。經過整理分類、最後在搜尋結果中呈現給使用者，這讓 Google 成為巨大網際網路世界裡最好的資料查詢導航。</p>
+<p>爬文會耗費運算資源，所以搜尋引擎會控制爬文的額度，並優先遵從幾個要點爬文。</p>
+<ol>
+<li>優先從高權威性的網頁開始爬文(新聞媒體、國際認證機構 等等)</li>
+<li>擁有比較多連結的網頁</li>
+</ol>
+<p>所以<br>
+<strong>讓自己的網頁可以頻繁的被 Google 爬文，就是 SEO 們的主要目標。</strong><br>
+從規則中也可以知道<br>
+<strong>全新開張的網站、沒有足夠連結的網頁、或是很久不更新的文章，通常就要等待比較久才能夠被 Google 找到。</strong></p>
+<h3 id="收錄">收錄</h3>
+<p>爬文爬進 Google 伺服器 之後，Google 會建立「搜尋索引」(Search Index)，將資料收錄進資料庫裡進行管理、分類。</p>
+<p><strong>有經過收錄的內容才能在 Google 上被找到。</strong></p>
+<h3 id="排名">排名</h3>
+<p>使用者搜尋關鍵字詞的時候，Google 會從龐大搜尋資料庫中提供使用者最具價值的資訊。<br>
+最終目的就是要 <strong>提供最有價值的搜尋結果給使用者。</strong></p>
+<h2 id="SEO">SEO</h2>
+<p>SEO 全名 <em><strong>S</strong></em>earch <em><strong>E</strong></em>ngine <em><strong>O</strong></em>ptimization<br>
+所謂「操作 SEO、SEO 優化」，就是了解搜尋引擎的運作原理，根據演算法的習性產生優質內容、調整網站與連結架構、以及建立反向連結等方式，進而提升 Google 搜尋結果的排名。</p>
+<p>流量越高的網站，就越有可能呈現有價值的資訊給使用者，也越有可能吸引願意實際花錢消費的訪客。<br>
+SEO 的排名也就會越前面。<br>
+而 SEO 排名越好，就越有可能帶進更多的新訪客，再進一步「增加新客源的機會」。</p>
+<h2 id="所以怎麼做？">所以怎麼做？</h2>
+<p>SEO 分為 「站內優化」與「站外優化」</p>
+<h3 id="站內優化">站內優化</h3>
+<ol>
+<li>「關鍵字優化」</li>
+<li>「產生優質內容」</li>
+<li>「網站技術性優化」</li>
+</ol>
+<p>站內 SEO 主要就是讓 <strong>搜尋引擎</strong> 和 <strong>搜尋者</strong> 能清楚了解網頁的內容<br>
+想辦法 <em><strong>讓搜尋引擎「讀懂」網頁</strong></em> 會是關鍵</p>
+<p>基本上，站內 SEO 優化的項目都是 <em><strong>直接與使用者的利益相關的</strong></em><br>
+例如：提供給使用者可以解決問題的文章，提供給使用者需要的商品購買服務…</p>
+<h3 id="站外優化">站外優化</h3>
+<p>站外 SEO 偏像是讓搜尋引擎知道其他人（例如：網站和使用者）對自己網站的評價與看法<br>
+大多是和網站的 <strong>權威性</strong>、<strong>相關性</strong>、<strong>可信度</strong>有關。</p>
+<ul>
+<li>
+<p>反向連結 (Backlinks)</p>
+<p>爬文是藉由連結來串聯起各個網站的，因此若你的網站多次被其他網站所提到，那 Google 爬文會更頻繁造訪，權重也會逐漸累積。</p>
+</li>
+<li>
+<p>品牌訊號 (Brand Signals)</p>
+<p>增加品牌字眼出現在搜尋引擎關鍵字或網路上的次數。</p>
+</li>
+<li>
+<p>社群訊號 (Social Signals)<br>
+這是比較有爭議的項目，社群訊號指的是網頁在社群網站上的按讚、留言、分享數等，有研究顯示：社群分享量和排名呈現正相關，也就是社群分享量越多，排名似乎也越高。<br>
+然而，Google 官方也一再表示，社群訊號並不會直接影響排名。畢竟太容易經由人為操控。<br>
+但社群分享可能會帶來品牌搜尋量和品牌討論度，間接幫助提高排名，因此社群訊號依然是值得留意的項目。</p>
+</li>
+</ul>
+<h2 id="什麼是反向連結？">什麼是反向連結？</h2>
+<p>今天我們自己的 A 網站，裡面放了一個連結去到 B 網站，這個就是我們知道的 <strong>一般連結</strong><br>
+此時若 B 網站也放了一個連結，可以來到我們自己的 A 網站，那這時這個 <strong>“可以過來的連結”</strong>，就叫做 <strong>『反向連結』</strong>，我們也就得到了一個從 B 網站過來的 <strong>『反向連結』</strong>。</p>
+<p>『反向連結』是被評斷 SEO 的一大標準，卻也被強制限定不可被操控，一但發現濫用反向連結，Google 將立刻懲處，排名大幅調降、甚至採取從搜尋引擎中除名的行動都有可能。</p>
+<h2 id="身為前端我們可以做什麼？">身為前端我們可以做什麼？</h2>
+<p>大概看了整篇最想看的就是這一段了吧？</p>
+<p>web dev技術對 SEO 的提升在整體 SEO 排名表現中，重要性佔比相對於「內容」與「反向連結」較低，雖然較低，但依然有一點點我們可以努力的地方</p>
+<h3 id="meta-tag">meta tag</h3>
+<p>其實就是 HTML 的 <code>&lt;title&gt;</code> 與 <code>&lt;meta&gt;</code> tag<br>
+好的 <code>&lt;meta&gt;</code> tag 與 <code>&lt;title&gt;</code> 會幫助 爬文引擎 更了解我們網站的內容，從而針對適當的關鍵字做更高的 SEO 排序，前端皆知的 <em><strong>善用 語意化標籤</strong></em> ，而不要全部都用 <code>&lt;div&gt;</code> 也是其中一項</p>
+<h3 id="資料結構化">資料結構化</h3>
+<p>如果你有聽過 <a href="http://Schema.org" target="_blank" rel="noopener">Schema.org</a> ，那這就是他了，簡單來說就是在 <code>&lt;head&gt;</code> 裡面加上一段 <code>&lt;script&gt;</code><br>
+，裡面可能包含以下內容：</p>
+<div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">Code</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type&#x3D;&quot;application&#x2F;ld+json&quot;&gt;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;@context&quot;: &quot;http:&#x2F;&#x2F;schema.org&quot;,</span><br><span class="line">  &quot;@type&quot;: &quot;Event&quot;,</span><br><span class="line">  &quot;location&quot;: &#123;</span><br><span class="line">    &quot;@type&quot;: &quot;Place&quot;,</span><br><span class="line">    &quot;address&quot;: &#123;</span><br><span class="line">      &quot;@type&quot;: &quot;PostalAddress&quot;,</span><br><span class="line">      &quot;addressLocality&quot;: &quot;Denver&quot;,</span><br><span class="line">      &quot;addressRegion&quot;: &quot;CO&quot;,</span><br><span class="line">      &quot;postalCode&quot;: &quot;80209&quot;,</span><br><span class="line">      &quot;streetAddress&quot;: &quot;7 S. Broadway&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;name&quot;: &quot;The Hi-Dive&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;name&quot;: &quot;Typhoon with Radiation City&quot;,</span><br><span class="line">  &quot;offers&quot;: &#123;</span><br><span class="line">    &quot;@type&quot;: &quot;Offer&quot;,</span><br><span class="line">    &quot;price&quot;: &quot;13.00&quot;,</span><br><span class="line">    &quot;priceCurrency&quot;: &quot;USD&quot;,</span><br><span class="line">    &quot;url&quot;: &quot;http:&#x2F;&#x2F;www.ticketfly.com&#x2F;purchase&#x2F;309433&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;startDate&quot;: &quot;2022-09-14T21:30&quot;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>他一樣會幫助 爬文引擎 更明確的了解我們網站的內容，<strong>而且會對搜尋結果畫面產生實質影響</strong>，如果你曾在某些搜尋結果中看過以下畫面：<br>
+<img alt data-src="https://i.imgur.com/KP35nRT.png" class="lazyload"><br>
+很明顯除了 <code>&lt;title&gt;</code> 及簡短敘述，我還可以從搜尋結果中知道 星數、價位、評分與是否供貨，這些多餘的其他資訊，就是藉由以上撰寫 結構化資料 所產生的結果，會對 爬文引擎 產生非常實際的影響。</p>
+<p>值得一提的是，我們填得越完整，Google 搜尋結果也不一定會將資訊呈現在搜尋結果的畫面中，完全看 Google 心情，但有填的情況下，哪天 Google 心情好，就會放上去了。</p>
+<p>可以藉由 <a href="https://schema.org/docs/full.html" target="_blank" rel="noopener">schema.org Full Hierarchy</a> 查到完整的結構化資料列表。</p>
+<p>…</p>
+<p>放心你不是第一個不想全部看完的人，<a href="https://developers.google.com/search/docs/advanced/structured-data/article?hl=zh-tw" target="_blank" rel="noopener">Google 進階搜尋引擎最佳化 (SEO)</a> 有提供一些範例可以照抄，記得從左側的 <strong>功能指南</strong> 中選取自己想要“借鑑”的範本。或是從這裡也可以找到 <a href="https://developers.google.com/search/docs/advanced/structured-data/search-gallery?hl=zh-tw" target="_blank" rel="noopener">Google 探索 Search Gallery</a>。<br>
+<img alt data-src="https://i.imgur.com/VAV2BEU.png" class="lazyload"></p>
+<h3 id="img-alt">img alt</h3>
+<p>這個應該也比較廣為人知，當圖片顯示不出來時，會顯示 alt 的內容<br>
+但還有一件事<br>
+當 爬文引擎 做網頁爬文時，不會知道圖片的內容，因此開發者藉由 alt 去告知 爬文引擎 這張圖片的內容，就會是唯一的方法，也就會是 <em><strong>增加內容</strong></em> 的手段。</p>
+<h2 id="SEO-多久會看到成效？">SEO 多久會看到成效？</h2>
+<p>如果你問 Google ，大概會得到 “ It depends.” （看情況）的回答</p>
+<p>太多的因素會影響，包括網站本身原有的權威強度、關鍵字的競爭程度等，都可能會影響文章的排名表現。</p>
+<p>訪間網站統計大約要超過六個月的時間成效才算是穩定，想看到一點點跡象最快也要 2~3 個月，當然也還是有很極端的案例，所以或許真的像 Google 自己說的…</p>
+<h4 id="“-It-depends-”">“ It depends.”</h4>
+<h2 id="參考資料">參考資料</h2>
+<ul>
+<li><a href="https://www.statista.com/statistics/1128859/taiwan-market-share-of-search-engine-websites/" target="_blank" rel="noopener">statista.com</a></li>
+<li><a href="https://www.shopjkl.com/pages/seo" target="_blank" rel="noopener">SEO 是什麼？</a></li>
+<li><a href="https://medium.com/%E6%96%87%E6%80%9D%E4%B8%8D%E8%97%8F%E7%A7%81/%E6%96%87%E6%80%9D%E4%B8%8D%E8%97%8F%E7%A7%81-seo%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E5%84%AA%E5%8C%96-%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86-7af709152238" target="_blank" rel="noopener">【文思不藏私】SEO搜尋引擎優化～</a></li>
+<li><a href="https://www.shopjkl.com/pages/search" target="_blank" rel="noopener">搜尋引擎 (Search Engine) 是什麼？為什麼大家只討論 Google搜尋引擎？</a></li>
+<li><a href="https://www.shopjkl.com/pages/algorithm" target="_blank" rel="noopener">演算法是什麼？</a></li>
+<li><a href="https://ahrefs.com/blog/how-long-does-it-take-to-rank/" target="_blank" rel="noopener">How long does it take to rank in Google?</a></li>
+<li><a href="https://www.searchenginejournal.com/seo-guide/search-authority/" target="_blank" rel="noopener">The Three Pillars of SEO: Authority, Relevance, and Trust</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta#attr-name" target="_blank" rel="noopener">MDN <meta></a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta/name" target="_blank" rel="noopener">MDN <meta> name</a></li>
+<li><a href="https://awoo.ai/zh-hant/blog/structured-data/" target="_blank" rel="noopener">用結構化資料與Google溝通，分析結構化資料的優點、寫法</a></li>
+<li><a href="https://developers.google.com/search/docs/advanced/structured-data/sd-policies?hl=zh-tw" target="_blank" rel="noopener">Google 結構化資料通用指南</a></li>
+<li><a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">結構化資料測試工具（複合式搜尋結果測試）</a></li>
+<li><a href="https://schema.org/" target="_blank" rel="noopener">Schema.org</a></li>
+<li><a href="https://schema.org/docs/schemas.html" target="_blank" rel="noopener">Schema.org 網站類型</a></li>
+<li>Google Tag Manager</li>
+</ul>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination_post" id="pagination"><div class="next-post pull-full"><a href="/2021/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%A9%9F%E6%9C%83/"><img class="next_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>盛夏繁星：第二次機會</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 評論</span></div><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://wade0615.github.io/2021/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E5%89%8D%E7%AB%AF%E7%9A%84SEO/';
+  this.page.identifier = '2021/想知道嗎：前端的SEO/';
+  this.page.title = '想知道嗎：前端的SEO';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'wade0615blog' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script></div></div></main><footer id="footer" style="background-image: url(/img/typewriter.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By Wade Wu</div><div class="framework-info"><span>Power by </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-plus" id="font_plus" title="放大字體"></i><i class="fa fa-minus" id="font_minus" title="縮小字體"></i><i class="darkmode fa fa-moon-o" id="darkmode" title="夜間模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="設置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直達評論"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到頂部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>

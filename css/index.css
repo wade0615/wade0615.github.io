@@ -1254,9 +1254,9 @@ figure.highlight {
 }
 blockquote {
   margin: 0 0 1rem;
-  padding: 0.1rem 0.8rem;
+  padding: 0.6rem 0.8rem;
   border-left: 0.3rem solid #000;
-  background-color: #878787;
+  background-color: #dbdbdb;
   color: #000;
 }
 blockquote a {

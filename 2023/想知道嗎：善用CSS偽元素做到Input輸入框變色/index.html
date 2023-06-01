@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"><title>想知道嗎：善用CSS偽元素做到Input輸入框變色 | W.S.Wade</title><meta name="description" content="想知道嗎：善用CSS偽元素做到Input輸入框變色"><meta name="author" content="Wade Wu"><meta name="copyright" content="Wade Wu"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/logo.jpg"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#fff"><meta name="msapplication-TileColor" content="#fff"><link rel="apple-touch-icon" sizes="180x180" href="/img/logo.jpg"><link rel="icon" type="image/png" sizes="32x32" href="/img/logo.jpg"><link rel="icon" type="image/png" sizes="16x16" href="/img/logo.jpg"><link rel="mask-icon" href="/img/logo.jpg" color="#5bbad5"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="想知道嗎：善用CSS偽元素做到Input輸入框變色"><meta name="twitter:description" content="想知道嗎：善用CSS偽元素做到Input輸入框變色"><meta name="twitter:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta property="og:type" content="article"><meta property="og:title" content="想知道嗎：善用CSS偽元素做到Input輸入框變色"><meta property="og:url" content="https://wade0615.github.io/2023/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E5%96%84%E7%94%A8CSS%E5%81%BD%E5%85%83%E7%B4%A0%E5%81%9A%E5%88%B0Input%E8%BC%B8%E5%85%A5%E6%A1%86%E8%AE%8A%E8%89%B2/"><meta property="og:site_name" content="W.S.Wade"><meta property="og:description" content="想知道嗎：善用CSS偽元素做到Input輸入框變色"><meta property="og:image" content="https://wade0615.github.io/img/typewriter.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="canonical" href="https://wade0615.github.io/2023/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E5%96%84%E7%94%A8CSS%E5%81%BD%E5%85%83%E7%B4%A0%E5%81%9A%E5%88%B0Input%E8%BC%B8%E5%85%A5%E6%A1%86%E8%AE%8A%E8%89%B2/"><link rel="next" title="盛夏繁星：22-23的十件小事" href="https://wade0615.github.io/2023/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A22-23%E7%9A%84%E5%8D%81%E4%BB%B6%E5%B0%8F%E4%BA%8B/"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', '3806605178', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sriracha&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '鍵將本頁加入書籤'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: true,
+  fancybox: false,
+  Snackbar: undefined,
+  baiduPush: false,
+  isHome: false,
+  isPost: true
+  
+}</script><meta name="generator" content="Hexo 6.3.0"></head><body><header> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">W.S.Wade</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-pencil"></i><span> 文章列表</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-sitemap"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> 關於我</span></a></div></div></span></div></header><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">42</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分類</div><div class="length_num">6</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-pencil"></i><span> 文章列表</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-sitemap"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-user-circle"></i><span> 關於我</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><main id="content-outer"><div id="top-container" style="background-image: url(/img/typewriter.jpg)"><div id="post-info"><div id="post-title"><div class="posttitle">想知道嗎：善用CSS偽元素做到Input輸入框變色</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2023-05-31</time><span class="post-meta__separator">|</span><span><i class="fa fa-inbox post-meta__icon fa-fw" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E/">想知道嗎</a></span><div class="post-meta-wordcount"><div class="post-meta-pv-cv"><i class="fa fa-comment-o post-meta__icon fa-fw" aria-hidden="true"></i><span>評論數:</span><a href="/2023/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E5%96%84%E7%94%A8CSS%E5%81%BD%E5%85%83%E7%B4%A0%E5%81%9A%E5%88%B0Input%E8%BC%B8%E5%85%A5%E6%A1%86%E8%AE%8A%E8%89%B2/#post-comment"><span class="disqus-comment-count" data-disqus-url="https://wade0615.github.io/2023/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E5%96%84%E7%94%A8CSS%E5%81%BD%E5%85%83%E7%B4%A0%E5%81%9A%E5%88%B0Input%E8%BC%B8%E5%85%A5%E6%A1%86%E8%AE%8A%E8%89%B2/"></span></a></div></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h2 id="前言">前言</h2>
+<p>說到監聽網頁前端的 input 有沒有輸入值，來改變輸入匡顏色提醒使用者的需求<br>
+想必稍微有用過框架的前端開發者們都會想到用監聽表單 value 是不是 length 為 0 來增減一個 class，去做到改變樣式<br>
+無論是利用 React 的 <a target="_blank" rel="noopener" href="https://react.dev/reference/react/useEffect">useEffect</a>，或是 Vue 的 <a target="_blank" rel="noopener" href="https://vuejs.org/guide/essentials/class-and-style.html#binding-html-classes">:class binding</a><br>
+或是其他方式</p>
+<p>但這些方式都需要撰寫 JS 來做到表單監聽，去觸發改變樣式行為<br>
+有可以不寫 JS 的方式嗎？</p>
+<p>有的，如果只是改變樣式，現在已經可以用純 CSS 做到</p>
+<h2 id="情境">情境</h2>
+<p>再重複一次情境：</p>
+<p>依據實際開發經驗，要變色的區域有可能是 <code>&lt;input&gt;</code> 本身，也可能因為有 icon 的關係，要變色的區域是外層的 <code>&lt;div&gt;</code><br>
+我的 <code>&lt;input&gt;</code> element 可能長這樣</p>
+<div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">plaintext</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>也可能長這樣</p>
+<div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">plaintext</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;input type=&quot;text&quot;&gt;</span><br><span class="line">  &lt;span&gt;把我想像成 icon&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>要做出一種方便達到「監聽網頁前端的 input 有沒有輸入值，來改變輸入匡顏色提醒使用者的需求」的程式撰寫方式</p>
+<h2 id="CSS-解法">CSS 解法</h2>
+<p>在想改變顏色的 element 加上 <code>is_input_valid</code> 的 class 即可</p>
+<h3 id="HTML">HTML</h3>
+<div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">plaintext</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;第一個輸入框&lt;/h2&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; required class=&quot;border_style is_input_valid&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;h2&gt;第二個輸入框&lt;/h2&gt;</span><br><span class="line">&lt;div class=&quot;border_style parent_dev is_input_valid&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;text&quot; required&gt;</span><br><span class="line">  &lt;span&gt;把我想像成 icon&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="SCSS">SCSS</h3>
+<div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">plaintext</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">.border_style &#123;</span><br><span class="line">  border: 2px solid black;</span><br><span class="line">&#125;</span><br><span class="line">.is_input_valid &#123;</span><br><span class="line">  &amp;:required:valid,</span><br><span class="line">  &amp;:has(input:required:valid) &#123;</span><br><span class="line">    border-color: forestgreen;</span><br><span class="line">  &#125;</span><br><span class="line">  &amp;:required:invalid:not(:placeholder-shown),</span><br><span class="line">  &amp;:has(input:required:invalid:not(:placeholder-shown)) &#123;</span><br><span class="line">    border-color: crimson;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  &amp;:focus &#123;</span><br><span class="line">    outline: 0;</span><br><span class="line">  &#125;</span><br><span class="line">  input,</span><br><span class="line">  input:focus &#123;</span><br><span class="line">    border: none;</span><br><span class="line">    outline: 0;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.parent_dev &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="分開解釋">分開解釋</h2>
+<p>input element 本身先加了 required 屬性之後</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:required">:required</a>
+<blockquote>
+<p>可以選到擁有 required 屬性的 <code>&lt;input&gt;</code> <code>&lt;select&gt;</code> <code>&lt;textarea&gt;</code></p>
+</blockquote>
+</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:valid">:valid</a>
+<blockquote>
+<p>若 <code>input</code> 或其他 <code>form</code> 元素 <strong><em>驗證正確</em></strong>，則有效</p>
+</blockquote>
+</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:invalid">:invalid</a>
+<blockquote>
+<p>上一個反過來，<strong><em>驗證失敗</em></strong>，則有效</p>
+</blockquote>
+</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:has">:has()</a>
+<blockquote>
+<p>這比較複雜，若 <code>()</code> 內所指定的 element 條件，在當前賦予此偽類的子層內有達成，則整個 <code>:has()</code> 條件成立，會對賦予此偽類的 element 改變其 CSS 樣式</p>
+</blockquote>
+</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:not">:not()</a>
+<blockquote>
+<p>防止特定元素被選中，或是不具有某些條件的元素，注意其擁有很多 <strong><em>奇招</em></strong></p>
+</blockquote>
+</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/:placeholder-shown">:placeholder-shown</a>
+<blockquote>
+<p>算是最關鍵的一個，表示當前 <strong><em>擁有 placeholder</em></strong> 的 <code>&lt;input&gt;</code> 或是 <code>&lt;textarea&gt;</code></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="綜合解讀">綜合解讀</h2>
+<ul>
+<li>:required:valid
+<blockquote>
+<p><strong><em>擁有 required</em></strong> 且 <strong><em>通過驗證</em></strong> 的 <code>&lt;input&gt;</code></p>
+</blockquote>
+</li>
+<li>:required:invalid:not(:placeholder-shown)
+<blockquote>
+<p><strong><em>擁有 required</em></strong> 且 <strong><em>不通過驗證</em></strong> 而且 <strong><em>不擁有 placeholder</em></strong> 的 <code>&lt;input&gt;</code></p>
+</blockquote>
+</li>
+</ul>
+<p>再加上 <code>:has()</code> 就可以偵測子元素去改變當前元素的 CSS 了</p>
+</div></article><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"></div></div><nav class="pagination_post" id="pagination"><div class="next-post pull-full"><a href="/2023/%E7%9B%9B%E5%A4%8F%E7%B9%81%E6%98%9F%EF%BC%9A22-23%E7%9A%84%E5%8D%81%E4%BB%B6%E5%B0%8F%E4%BA%8B/"><img class="next_cover lazyload" data-src="/img/typewriter.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>盛夏繁星：22-23的十件小事</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 評論</span></div><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://wade0615.github.io/2023/%E6%83%B3%E7%9F%A5%E9%81%93%E5%97%8E%EF%BC%9A%E5%96%84%E7%94%A8CSS%E5%81%BD%E5%85%83%E7%B4%A0%E5%81%9A%E5%88%B0Input%E8%BC%B8%E5%85%A5%E6%A1%86%E8%AE%8A%E8%89%B2/';
+  this.page.identifier = '2023/想知道嗎：善用CSS偽元素做到Input輸入框變色/';
+  this.page.title = '想知道嗎：善用CSS偽元素做到Input輸入框變色';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'wade0615blog' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script></div></div></main><footer id="footer" style="background-image: url(/img/typewriter.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By Wade Wu</div><div class="framework-info"><span>Power by </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-plus" id="font_plus" title="放大字體"></i><i class="fa fa-minus" id="font_minus" title="縮小字體"></i><i class="darkmode fa fa-moon-o" id="darkmode" title="夜間模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="設置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直達評論"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-arrow-up" id="go-up" title="回到頂部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>
